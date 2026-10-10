@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Undangan Pernikahan Raka &amp; Ayu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ai:#1b2540;--bg:#f4f0e8;--fg:#2a2730;--card:#fffdf8;--beni:#b7282e;--sakura:#e9b8c0;--kin:#b8975a;--line:rgba(42,39,48,.18);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161c30;--fg:#ece7dc;--card:#1f2742;--line:rgba(236,231,220,.2)}}
+:root[data-theme="dark"]{--bg:#161c30;--fg:#ece7dc;--card:#1f2742;--line:rgba(236,231,220,.2)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.75 "Zen Kaku Gothic New",system-ui,sans-serif;overflow-x:hidden}
+body.lock{overflow:hidden;height:100%}
+h1,h2,h3,.mincho{font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:500;margin:0}
+p{margin:.4em 0}
+/* cover */
+.cover{position:fixed;inset:0;z-index:50;display:grid;place-items:center;text-align:center;color:#f4f0e8;padding:24px}
+.panel{position:absolute;top:0;bottom:0;width:50%;background:var(--ai);transition:transform 1.7s cubic-bezier(.77,0,.18,1);
+background-image:linear-gradient(rgba(244,240,232,.16) 2px,transparent 2px),linear-gradient(90deg,rgba(244,240,232,.16) 2px,transparent 2px);background-size:100% 20%,50% 100%}
+.panel.l{left:0;border-right:2px solid rgba(244,240,232,.3)}.panel.r{right:0}
+.open .panel.l{transform:translateX(-101%)}.open .panel.r{transform:translateX(101%)}
+.inner{position:relative;z-index:2;background:rgba(27,37,64,.86);padding:40px 34px;border:1px solid var(--kin);max-width:420px;transition:opacity .7s}
+.open .inner{opacity:0;pointer-events:none}
+.inner small{letter-spacing:.2em;color:var(--sakura)}
+.inner h1{font-size:clamp(2.4rem,9vw,3.4rem);line-height:1.2;margin:14px 0}
+.to{margin:18px 0 22px;font-size:.95rem}.to b{display:block;font-size:1.25rem;font-weight:500;font-family:"Shippori Mincho",serif;color:#fff}
+.btn{display:inline-block;border:1px solid var(--kin);background:var(--beni);color:#fff;padding:12px 28px;font:inherit;cursor:pointer;transition:background .3s,transform .3s}
+.btn:hover{background:#9c1f25}.btn:active{transform:scale(.97)}.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--kin);outline-offset:3px}
+.btn.alt{background:transparent;color:var(--fg);border-color:var(--kin)}.btn.alt:hover{background:var(--kin);color:#fff}
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;color:#f4f0e8;overflow:hidden;padding:80px 20px;
+background:radial-gradient(circle at 100% 100%,transparent 22%,rgba(244,240,232,.07) 23% 26%,transparent 27%) 0 0/70px 35px,var(--ai)}
+.sun{position:absolute;width:min(62vmin,420px);aspect-ratio:1;border-radius:50%;background:var(--beni);opacity:.88;animation:breath 7s ease-in-out infinite}
+@keyframes breath{50%{transform:scale(1.05);opacity:.78}}
+.hero .txt{position:relative;z-index:2}
+.hero h1{font-size:clamp(3.2rem,15vw,7rem);line-height:1.05;letter-spacing:.02em}
+.hero .amp{display:block;font-size:.4em;color:var(--sakura)}
+.hero .date{margin-top:22px;letter-spacing:.14em}
+.tate{position:absolute;right:max(5vw,16px);top:12vh;writing-mode:vertical-rl;font-size:clamp(1.3rem,5vw,2.2rem);letter-spacing:.5em;color:var(--kin);z-index:2}
+.hero .intro{max-width:30ch;margin:0 auto 18px;color:#e6dfd3}
+.scroll{position:absolute;bottom:22px;left:50%;width:1px;height:48px;background:linear-gradient(var(--kin),transparent);animation:drop 2s ease-in-out infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+/* sections */
+.sec{max-width:900px;margin:0 auto;padding:clamp(64px,10vw,112px) 20px;text-align:center}
+.sec h2{font-size:clamp(1.8rem,6vw,2.6rem)}
+.sec h2::after{content:"";display:block;width:56px;height:2px;background:var(--beni);margin:16px auto 30px}
+.lead{max-width:52ch;margin:0 auto 30px;opacity:.85}
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:36px;align-items:start}
+.person h3{font-size:clamp(1.8rem,6vw,2.4rem)}
+.person .full{color:var(--beni);margin-bottom:10px}
+.person p{font-size:.95rem}
+.hanko{display:inline-grid;place-items:center;width:46px;height:46px;border:2px solid var(--beni);color:var(--beni);font-family:"Shippori Mincho",serif;margin-bottom:12px;transform:rotate(-6deg)}
+.cdwrap{background:var(--ai);color:#f4f0e8;max-width:none;padding-left:20px;padding-right:20px}
+.cdwrap .sec{padding:clamp(56px,8vw,90px) 20px}
+.cd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:560px;margin:0 auto}
+.cd div{border:1px solid var(--kin);padding:18px 4px}
+.cd b{display:block;font:500 clamp(1.8rem,8vw,3rem)/1.1 "Shippori Mincho",serif}
+.cd b.tick{animation:tick .5s}
+@keyframes tick{0%{transform:translateY(-40%);opacity:0}100%{transform:none;opacity:1}}
+.cd span{font-size:.8rem;color:var(--sakura)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--kin);padding:28px 20px}
+.card h3{font-size:1.5rem;margin-bottom:6px}
+.card.beni{border-top-color:var(--beni)}
+.map{margin-top:30px;border:1px solid var(--line);background:var(--card)}
+.map iframe{display:block;width:100%;height:320px;border:0}
+.map .btn{margin:18px}
+.rek{font:500 1.5rem/1.3 "Shippori Mincho",serif;letter-spacing:.06em;margin:10px 0}
+.form{max-width:560px;margin:0 auto 34px;text-align:left;display:grid;gap:12px}
+input,select,textarea{width:100%;font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);padding:11px 12px;border-radius:0}
+textarea{min-height:100px;resize:vertical}
+.list{max-width:560px;margin:0 auto;max-height:440px;overflow-y:auto;text-align:left;display:grid;gap:12px;padding-right:4px}
+.msg{background:var(--card);border-left:3px solid var(--sakura);padding:14px 16px;animation:in .6s}
+@keyframes in{from{opacity:0;transform:translateX(-14px)}}
+.msg b{font-family:"Shippori Mincho",serif;font-size:1.05rem}
+.msg em{font-style:normal;font-size:.75rem;border:1px solid var(--kin);padding:1px 8px;margin-left:8px}
+.msg p{margin:6px 0 0;white-space:pre-wrap;word-break:break-word}.msg small{opacity:.6}
+.note{font-size:.85rem;opacity:.7}
+footer{background:var(--ai);color:#f4f0e8;text-align:center;padding:60px 20px}
+footer h2{font-size:2rem}footer .sk{font-size:2.6rem;color:var(--sakura)}
+canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:40}
+.rv{opacity:0;transform:translateY(20px);transition:opacity 1s,transform 1s}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}canvas{display:none}}
+</style>
+</head>
+<body class="lock">
+
+<div class="cover" id="cover">
+  <div class="panel l"></div><div class="panel r"></div>
+  <div class="inner">
+    <small>THE WEDDING OF</small>
+    <h1 class="mincho">Raka &amp; Ayu</h1>
+    <div class="to">Kepada Yth. Bapak/Ibu/Saudara/i<b id="guest">Tamu Undangan</b></div>
+    <button class="btn" id="openBtn">Buka Undangan</button>
+  </div>
+</div>
+
+<canvas id="sakura" aria-hidden="true"></canvas>
+
+<header class="hero">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="tate" aria-hidden="true">結婚式</div>
+  <div class="txt">
+    <p class="intro">Dengan penuh sukacita, kami mengundang Anda ke hari pernikahan kami</p>
+    <h1>Raka<span class="amp">&amp;</span>Ayu</h1>
+    <p class="date">Sabtu, 19 Desember 2026</p>
+  </div>
+  <div class="scroll" aria-hidden="true"></div>
+</header>
+
+<section class="sec rv">
+  <h2>Mempelai</h2>
+  <p class="lead">Dengan rahmat Tuhan Yang Maha Esa, kami akan melangsungkan pernikahan putra dan putri kami.</p>
+  <div class="duo">
+    <div class="person">
+      <div class="hanko">郎</div>
+      <h3>Raka</h3>
+      <div class="full mincho">Raka Pratama Wibowo</div>
+      <p>Putra dari</p>
+      <p><b>Bapak Suryo Wibowo</b><br>&amp; <b>Ibu Siti Aminah</b></p>
+    </div>
+    <div class="person">
+      <div class="hanko">嫁</div>
+      <h3>Ayu</h3>
+      <div class="full mincho">Ayu Lestari Santoso</div>
+      <p>Putri dari</p>
+      <p><b>Bapak Agus Santoso</b><br>&amp; <b>Ibu Dewi Rahayu</b></p>
+    </div>
+  </div>
+</section>
+
+<div class="cdwrap">
+  <section class="sec rv">
+    <h2>Menuju Hari Bahagia</h2>
+    <div class="cd" role="timer" aria-live="off">
+      <div><b id="d">0</b><span>Hari</span></div>
+      <div><b id="h">0</b><span>Jam</span></div>
+      <div><b id="m">0</b><span>Menit</span></div>
+      <div><b id="s">0</b><span>Detik</span></div>
+    </div>
+  </section>
+</div>
+
+<section class="sec rv">
+  <h2>Waktu &amp; Tempat</h2>
+  <div class="cards">
+    <div class="card beni"><h3>Akad Nikah</h3><p>Sabtu, 19 Desember 2026</p><p><b>08.00 WIB</b> – selesai</p></div>
+    <div class="card"><h3>Resepsi</h3><p>Sabtu, 19 Desember 2026</p><p><b>11.00 – 14.00 WIB</b></p></div>
+  </div>
+  <p style="margin-top:26px"><b>Gedung Sakura Hall</b><br>Jl. Contoh No. 17, Kelurahan Contoh</p>
+  <div class="map">
+    <iframe title="Lokasi acara" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Monumen+Nasional+Jakarta&amp;output=embed"></iframe>
+    <a class="btn alt" id="mapLink" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Monumen+Nasional+Jakarta">Buka di Google Maps</a>
+  </div>
+</section>
+
+<section class="sec rv">
+  <h2>Hadiah Pernikahan</h2>
+  <p class="lead">Kehadiran dan doa Anda adalah hadiah terindah. Bila ingin berbagi kebahagiaan, Anda dapat mengirimkannya melalui rekening berikut.</p>
+  <div class="cards">
+    <div class="card"><h3>Bank BNI</h3><div class="rek" id="bni">0123 4567 89</div><p>a.n. Raka Pratama Wibowo</p><button class="btn alt" data-copy="bni">Salin nomor</button></div>
+    <div class="card beni"><h3>Bank BRI</h3><div class="rek" id="bri">0123 0100 4567 508</div><p>a.n. Ayu Lestari Santoso</p><button class="btn alt" data-copy="bri">Salin nomor</button></div>
+  </div>
+</section>
+
+<section class="sec rv">
+  <h2>Ucapan &amp; Doa</h2>
+  <div class="form">
+    <input id="nm" maxlength="40" placeholder="Nama Anda" aria-label="Nama Anda" autocomplete="name">
+    <select id="hd" aria-label="Konfirmasi kehadiran"><option>Hadir</option><option>Berhalangan hadir</option><option>Masih ragu</option></select>
+    <textarea id="tx" maxlength="400" placeholder="Tulis ucapan dan doa untuk kedua mempelai" aria-label="Ucapan"></textarea>
+    <button class="btn" id="send" type="button">Kirim ucapan</button>
+    <div class="note" id="st" role="status"></div>
+  </div>
+  <div class="list" id="list"></div>
+</section>
+
+<footer>
+  <div class="sk" aria-hidden="true">桜</div>
+  <p>Merupakan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+  <h2>Raka &amp; Ayu</h2>
+</footer>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+/* nama tamu dari ?to=Nama */
+try{var to=new URLSearchParams(location.search).get('to');if(to)$('guest').textContent=to.slice(0,60)}catch(e){}
+
+/* buka undangan */
+$('openBtn').addEventListener('click',function(){
+  $('cover').classList.add('open');document.body.classList.remove('lock');
+  startPetals();
+  setTimeout(function(){$('cover').style.display='none'},2000);
+});
+
+/* hitung mundur */
+var target=new Date('2026-12-19T08:00:00+07:00').getTime(),last={};
+function set(id,v){if(last[id]!==v){last[id]=v;var e=$(id);e.textContent=v;e.classList.remove('tick');void e.offsetWidth;e.classList.add('tick')}}
+function tick(){var t=Math.max(0,target-Date.now()),s=Math.floor(t/1000);
+  set('d',Math.floor(s/86400));set('h',Math.floor(s%86400/3600));set('m',Math.floor(s%3600/60));set('s',s%60)}
+tick();setInterval(tick,1000);
+
+/* muncul saat digulir */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+
+/* salin rekening */
+document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
+  var n=$(b.dataset.copy).textContent.replace(/\s/g,'');
+  var done=function(){var o=b.textContent;b.textContent='Tersalin';setTimeout(function(){b.textContent=o},1800)};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(n).then(done,function(){fb(n,done)})}else fb(n,done)
+})});
+function fb(n,cb){var t=document.createElement('textarea');t.value=n;document.body.appendChild(t);t.select();try{document.execCommand('copy');cb()}catch(e){}t.remove()}
+
+/* kelopak sakura */
+var started=false;
+function startPetals(){
+  if(started||matchMedia('(prefers-reduced-motion:reduce)').matches)return;started=true;
+  var c=$('sakura'),x=c.getContext('2d'),W,H,dpr=Math.min(devicePixelRatio||1,2),P=[];
+  function size(){W=innerWidth;H=innerHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0)}
+  size();addEventListener('resize',size);
+  function mk(r){return{x:Math.random()*W,y:r?Math.random()*H:-20,s:6+Math.random()*8,v:.5+Math.random()*1.1,w:Math.random()*6,ws:.01+Math.random()*.02,a:Math.random()*6,as:(Math.random()-.5)*.04,o:.45+Math.random()*.4}}
+  for(var i=0;i<(W<600?18:34);i++)P.push(mk(true));
+  (function loop(){
+    x.clearRect(0,0,W,H);
+    P.forEach(function(p,i){
+      p.y+=p.v;p.w+=p.ws;p.x+=Math.sin(p.w)*.8+.25;p.a+=p.as;
+      if(p.y>H+20||p.x>W+20)P[i]=mk(false);
+      x.save();x.translate(p.x,p.y);x.rotate(p.a);x.globalAlpha=p.o;x.fillStyle='#e9b8c0';
+      x.beginPath();x.moveTo(0,-p.s);x.bezierCurveTo(p.s,-p.s*.6,p.s*.8,p.s*.7,0,p.s);x.bezierCurveTo(-p.s*.8,p.s*.7,-p.s,-p.s*.6,0,-p.s);x.fill();x.restore()
+    });
+    requestAnimationFrame(loop)
+  })()
+}
+
+/* kolom ucapan */
+var KEY='ucapan-undangan-raka-ayu',col=null,store=[];
+function lget(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+function lset(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-100)))}catch(e){}}
+function render(a){
+  var L=$('list');L.textContent='';
+  if(!a.length){var p=document.createElement('p');p.className='note';p.textContent='Belum ada ucapan. Jadilah yang pertama.';L.appendChild(p);return}
+  a.forEach(function(m){
+    var d=document.createElement('div');d.className='msg';
+    var b=document.createElement('b');b.textContent=m.n;
+    var e=document.createElement('em');e.textContent=m.h;
+    var p=document.createElement('p');p.textContent=m.m;
+    var s=document.createElement('small');s.textContent=new Date(m.t).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+    d.append(b,e,p,s);L.appendChild(d)
+  })
+}
+function useLocal(){col=null;store=lget().reverse();render(store)}
+(async function(){
+  try{
+    var db=window.claude&&claude.use?await claude.use('db'):null;
+    if(db){col=db.collection('ucapan');
+      col.orderBy('t','desc').limit(100).onSnapshot(function(s){render(s.docs.map(function(d){return d.data()}))},useLocal)
+    }else useLocal()
+  }catch(e){useLocal()}
+})();
+$('send').addEventListener('click',async function(){
+  var n=$('nm').value.trim(),m=$('tx').value.trim(),st=$('st');
+  if(!n||!m){st.textContent='Isi nama dan ucapan terlebih dahulu.';return}
+  var item={n:n,m:m,h:$('hd').value,t:Date.now()};
+  try{
+    if(col){await col.add(item);st.textContent='Terima kasih, ucapan Anda terkirim.'}
+    else{var a=lget();a.push(item);lset(a);store=a.slice().reverse();render(store);st.textContent='Ucapan tersimpan di perangkat ini.'}
+    $('tx').value=''
+  }catch(e){
+    var a2=lget();a2.push(item);lset(a2);useLocal();st.textContent='Ucapan tersimpan di perangkat ini saja.'
+  }
+});
+})();
+</script>
+</body>
+</html>
