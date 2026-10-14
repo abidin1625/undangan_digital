@@ -1,0 +1,2815 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajeng &amp; Rizky — Undangan Pernikahan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Marcellus&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:wght@400;700&family=Pinyon+Script&display=swap"
+    rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <style>
+    /* ================= Fondasi & Palet ================= */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    :root {
+      --paper: #F4EBD8;
+      --paper2: #EDE0C6;
+      --card: #F9F3E2;
+      --ink: #2C2114;
+      --muted: #7C6B50;
+      --bronze: #96754A;
+      --gold: #C2A055;
+      --gold2: #E4CB8C;
+      --maroon: #6E2B33;
+      --maroon2: #5A232A;
+      --olive: #4E5A3A;
+      --line: rgba(150, 117, 74, .42);
+      --shadow: 0 26px 60px -30px rgba(60, 40, 18, .35);
+      --kawung-gold: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23C2A055' stroke-opacity='.3'%3E%3Cellipse cx='28' cy='28' rx='15' ry='7.5' transform='rotate(45 28 28)'/%3E%3Cellipse cx='28' cy='28' rx='15' ry='7.5' transform='rotate(-45 28 28)'/%3E%3C/g%3E%3Ccircle cx='28' cy='28' r='2' fill='%23C2A055' fill-opacity='.3'/%3E%3C/svg%3E");
+      --kawung-maroon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%236E2B33' stroke-opacity='.13'%3E%3Cellipse cx='28' cy='28' rx='15' ry='7.5' transform='rotate(45 28 28)'/%3E%3Cellipse cx='28' cy='28' rx='15' ry='7.5' transform='rotate(-45 28 28)'/%3E%3C/g%3E%3Ccircle cx='28' cy='28' r='2' fill='%236E2B33' fill-opacity='.13'/%3E%3C/svg%3E");
+      --tumpal-up: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10'%3E%3Cpath d='M1 9L7 1L13 9' fill='none' stroke='%23C2A055' stroke-width='1.3'/%3E%3C/svg%3E");
+      --tumpal-down: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10'%3E%3Cpath d='M1 1L7 9L13 1' fill='none' stroke='%23C2A055' stroke-width='1.3'/%3E%3C/svg%3E");
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Lora', serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
+      overflow-x: hidden
+    }
+
+    body.lock {
+      overflow: hidden
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 95;
+      pointer-events: none;
+      opacity: .05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+      background: none;
+      border: none;
+      cursor: pointer
+    }
+
+    ::selection {
+      background: var(--maroon);
+      color: var(--gold2)
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--bronze);
+      border-radius: 99px
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--paper2)
+    }
+
+    section {
+      padding: 100px 0;
+      scroll-margin-top: 76px;
+      position: relative
+    }
+
+    .container {
+      width: min(1120px, 92vw);
+      margin-inline: auto
+    }
+
+    .tumpal {
+      height: 10px;
+      background: var(--tumpal-up) repeat-x center/14px 10px;
+      opacity: .85
+    }
+
+    .tumpal.b {
+      background-image: var(--tumpal-down)
+    }
+
+    /* Ornamen umum */
+    .odiv {
+      width: min(240px, 70vw);
+      height: 26px;
+      color: var(--bronze);
+      display: block;
+      margin: 14px auto 0
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 11px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--bronze)
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg)
+    }
+
+    .shead {
+      text-align: center;
+      margin-bottom: 56px
+    }
+
+    h2 {
+      font-family: 'Marcellus', serif;
+      font-weight: 400;
+      font-size: clamp(2.1rem, 4.6vw, 3.3rem);
+      letter-spacing: .01em;
+      margin-top: 10px
+    }
+
+    h2 em {
+      font-family: 'Pinyon Script', cursive;
+      font-style: normal;
+      color: var(--maroon);
+      font-size: 1.12em
+    }
+
+    .arab {
+      font-family: 'Amiri', serif;
+      color: var(--bronze)
+    }
+
+    .wib {
+      display: inline-block;
+      font-size: 9.5px;
+      letter-spacing: .22em;
+      border: 1px solid var(--gold);
+      color: var(--bronze);
+      padding: 2px 9px;
+      border-radius: 999px;
+      vertical-align: .2em;
+      margin-left: 8px
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 26px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      border: 1px solid var(--maroon);
+      background: var(--maroon);
+      color: #F3E9D2;
+      transition: .25s;
+      cursor: pointer
+    }
+
+    .btn:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--ink)
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--bronze)
+    }
+
+    .btn.ghost:hover {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--paper)
+    }
+
+    .btn svg {
+      width: 15px;
+      height: 15px
+    }
+
+    .btn:focus-visible,
+    .icon-btn:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px
+    }
+
+    .rv {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .9s ease, transform .9s cubic-bezier(.22, 1, .36, 1);
+      transition-delay: var(--d, 0s)
+    }
+
+    .rv.in {
+      opacity: 1;
+      transform: none
+    }
+
+    /* ================= Gerbang / Cover ================= */
+    .cover {
+      position: fixed;
+      inset: 0;
+      z-index: 400;
+      display: block
+    }
+
+    .cover::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid var(--gold);
+      opacity: .65;
+      pointer-events: none;
+      z-index: 3
+    }
+
+    .pane {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50.5%;
+      background-color: var(--maroon2);
+      background-image: var(--kawung-gold);
+      transition: transform 1.35s cubic-bezier(.72, 0, .22, 1) .18s
+    }
+
+    .pane.left {
+      left: 0;
+      border-right: 1px solid var(--gold);
+      box-shadow: inset -50px 0 70px -40px rgba(0, 0, 0, .45)
+    }
+
+    .pane.right {
+      right: 0;
+      border-left: 1px solid var(--gold);
+      box-shadow: inset 50px 0 70px -40px rgba(0, 0, 0, .45)
+    }
+
+    .cover.open .pane.left {
+      transform: translateX(-103%)
+    }
+
+    .cover.open .pane.right {
+      transform: translateX(103%)
+    }
+
+    .cover-core {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 14px;
+      padding: 24px;
+      color: #F1E6CE;
+      transition: opacity .55s ease, transform .55s ease
+    }
+
+    .cover.open .cover-core {
+      opacity: 0;
+      transform: translateY(-14px);
+      pointer-events: none
+    }
+
+    .emb {
+      position: relative;
+      width: 118px;
+      height: 118px;
+      color: var(--gold)
+    }
+
+    .emb-ring {
+      position: absolute;
+      inset: 0
+    }
+
+    .emb-gun {
+      position: absolute;
+      inset: 16px;
+      color: var(--gold2)
+    }
+
+    .emb-cres {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      color: var(--gold)
+    }
+
+    .cov-eyebrow {
+      font-size: 11px;
+      letter-spacing: .34em;
+      text-transform: uppercase;
+      color: var(--gold2)
+    }
+
+    .cov-arab {
+      font-family: 'Amiri', serif;
+      font-size: 1.35rem;
+      color: var(--gold2)
+    }
+
+    .cov-names {
+      font-family: 'Pinyon Script', cursive;
+      font-weight: 400;
+      font-size: clamp(3rem, 9vw, 5.2rem);
+      line-height: 1.1;
+      color: #F6ECD4;
+      margin: 2px 0 6px
+    }
+
+    .cov-names i {
+      font-style: normal;
+      color: var(--gold);
+      font-size: .8em
+    }
+
+    .cov-date {
+      font-size: 12.5px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #D9C69A
+    }
+
+    .cov-btn {
+      margin-top: 18px;
+      padding: 15px 36px;
+      font-size: 11px;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--maroon2);
+      background: var(--gold);
+      border: 1px solid var(--gold2);
+      animation: breath 2.6s ease-in-out infinite
+    }
+
+    .cov-btn:hover {
+      background: #F6ECD4;
+      border-color: #F6ECD4
+    }
+
+    @keyframes breath {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(226, 203, 140, .45)
+      }
+
+      70% {
+        box-shadow: 0 0 0 16px rgba(226, 203, 140, 0)
+      }
+    }
+
+    .cov-hint {
+      margin-top: 14px;
+      font-size: 12px;
+      font-style: italic;
+      color: #C9B183
+    }
+
+    /* ================= Topbar ================= */
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 120;
+      height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(16px, 4vw, 44px);
+      border-bottom: 1px solid transparent;
+      transition: .35s
+    }
+
+    .topbar.scrolled {
+      background: rgba(244, 235, 216, .88);
+      backdrop-filter: blur(8px);
+      border-bottom-color: var(--line)
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .mono {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      font-family: 'Marcellus', serif;
+      font-size: 13px;
+      color: var(--maroon);
+      letter-spacing: .06em
+    }
+
+    .bt {
+      font-size: 10.5px;
+      letter-spacing: .22em;
+      color: var(--muted)
+    }
+
+    .tb-nav {
+      display: flex;
+      gap: 26px
+    }
+
+    .tb-nav a {
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid transparent;
+      padding-bottom: 3px
+    }
+
+    .tb-nav a:hover {
+      color: var(--maroon);
+      border-color: var(--gold)
+    }
+
+    /* ================= Hero / Sapaan ================= */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 120px 20px 90px
+    }
+
+    .hero .wm {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -52%);
+      width: min(480px, 86vw);
+      height: auto;
+      color: var(--bronze);
+      opacity: .12;
+      pointer-events: none
+    }
+
+    .hero-in {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      max-width: 820px
+    }
+
+    .hero-arab {
+      font-family: 'Amiri', serif;
+      font-size: clamp(1.5rem, 3.4vw, 2rem);
+      color: var(--olive)
+    }
+
+    .hero-salam {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--maroon);
+      letter-spacing: .04em
+    }
+
+    .hero-names {
+      font-family: 'Pinyon Script', cursive;
+      font-weight: 400;
+      font-size: clamp(3.4rem, 10vw, 7rem);
+      line-height: 1.05;
+      color: var(--maroon);
+      margin: 6px 0 0
+    }
+
+    .hero-names i {
+      font-style: normal;
+      color: var(--gold);
+      font-size: .72em
+    }
+
+    .hero-intro {
+      max-width: 56ch;
+      color: var(--muted);
+      font-size: 15px
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      font-size: 11.5px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-top: 4px
+    }
+
+    .hero-meta b {
+      color: var(--maroon);
+      font-weight: 600
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 14px
+    }
+
+    .cue {
+      position: absolute;
+      bottom: 26px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      font-size: 9.5px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .cue .line {
+      width: 1px;
+      height: 46px;
+      background: var(--line);
+      position: relative;
+      overflow: hidden
+    }
+
+    .cue .line::after {
+      content: "";
+      position: absolute;
+      left: -2px;
+      top: 0;
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      animation: fall 1.9s ease-in-out infinite
+    }
+
+    @keyframes fall {
+      0% {
+        top: -8px
+      }
+
+      70%,
+      100% {
+        top: 52px
+      }
+    }
+
+    /* ================= Mempelai ================= */
+    .couple-intro {
+      max-width: 60ch;
+      margin: 0 auto 64px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 15px
+    }
+
+    .couple-intro .salam {
+      display: block;
+      font-family: 'Marcellus', serif;
+      font-size: 1.5rem;
+      color: var(--maroon);
+      margin-bottom: 12px;
+      letter-spacing: .02em
+    }
+
+    .couple-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: clamp(24px, 5vw, 70px);
+      align-items: start
+    }
+
+    .amp-cell {
+      align-self: center;
+      text-align: center;
+      padding-top: 56px
+    }
+
+    .amp-cell .amp {
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(2.6rem, 5vw, 3.8rem);
+      color: var(--gold);
+      display: block
+    }
+
+    .amp-cell .amp-sub {
+      font-size: 10px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 8px
+    }
+
+    .person {
+      text-align: center
+    }
+
+    .arch {
+      position: relative;
+      max-width: 330px;
+      margin: 40px auto 0;
+      filter: drop-shadow(0 22px 34px rgba(60, 40, 18, .28))
+    }
+
+    .arch img {
+      width: 100%;
+      aspect-ratio: 0.72;
+      object-fit: cover;
+      clip-path: url(#archClip);
+      filter: sepia(.18) saturate(.92)
+    }
+
+    .arch-f {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      color: var(--gold);
+      pointer-events: none
+    }
+
+    .finial {
+      position: absolute;
+      top: -38px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 44px;
+      color: var(--gold)
+    }
+
+    .arch-base {
+      height: 9px;
+      background: var(--tumpal-up) repeat-x center/12px 9px;
+      opacity: .8;
+      margin-top: 14px
+    }
+
+    .p-role {
+      font-size: 10.5px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin: 26px 0 8px
+    }
+
+    .person h3 {
+      font-family: 'Marcellus', serif;
+      font-weight: 400;
+      font-size: clamp(1.5rem, 2.8vw, 1.95rem);
+      line-height: 1.3
+    }
+
+    .p-desc {
+      margin: 12px auto 10px;
+      max-width: 40ch;
+      font-size: 14px;
+      color: var(--muted)
+    }
+
+    .p-parents {
+      font-size: 13.5px;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 16px
+    }
+
+    .ig {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13px;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 4px;
+      color: var(--maroon)
+    }
+
+    .ig:hover {
+      color: var(--gold)
+    }
+
+    .ig svg {
+      width: 15px;
+      height: 15px
+    }
+
+    .couple-quote {
+      margin: 80px auto 0;
+      max-width: 640px;
+      text-align: center
+    }
+
+    .couple-quote p {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+      color: var(--maroon)
+    }
+
+    .couple-quote span {
+      display: block;
+      margin-top: 10px;
+      font-size: 12px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    /* ================= Acara ================= */
+    .band {
+      background: var(--paper2);
+      background-image: var(--kawung-maroon);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .band .tumpal.t {
+      margin-bottom: 8px
+    }
+
+    .band .tumpal.b {
+      margin-top: 8px
+    }
+
+    .cd {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: clamp(14px, 3.4vw, 36px);
+      flex-wrap: wrap;
+      margin: 14px 0 80px;
+      text-align: center
+    }
+
+    .cd-g b {
+      display: block;
+      font-family: 'Marcellus', serif;
+      font-weight: 400;
+      font-size: clamp(2.7rem, 7.4vw, 5rem);
+      line-height: 1;
+      color: var(--maroon);
+      font-variant-numeric: tabular-nums
+    }
+
+    .cd-g span {
+      display: block;
+      margin-top: 10px;
+      font-size: 10px;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .cd-sep {
+      padding-top: 14px;
+      color: var(--gold);
+      font-size: 1.6rem
+    }
+
+    .cd-note {
+      width: 100%;
+      text-align: center;
+      font-style: italic;
+      color: var(--bronze)
+    }
+
+    .ev-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(20px, 3.4vw, 36px)
+    }
+
+    .ev-card {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: inset 0 0 0 4px var(--card), inset 0 0 0 5px rgba(150, 117, 74, .5), var(--shadow);
+      padding: clamp(26px, 3.6vw, 44px);
+      text-align: center;
+      transition: transform .35s ease
+    }
+
+    .ev-card:hover {
+      transform: translateY(-5px)
+    }
+
+    .ev-card .num {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(3.2rem, 5.4vw, 4.4rem);
+      color: var(--maroon);
+      line-height: 1
+    }
+
+    .ev-card .my {
+      font-size: 11px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .ev-card h3 {
+      font-family: 'Marcellus', serif;
+      font-weight: 400;
+      font-size: 1.55rem;
+      margin: 12px 0 4px;
+      color: var(--ink)
+    }
+
+    .ev-card .time {
+      font-size: 14px;
+      color: var(--ink);
+      margin-bottom: 6px
+    }
+
+    .ev-card .ven {
+      font-weight: 600;
+      font-size: 14.5px;
+      margin-top: 14px
+    }
+
+    .ev-card .addr {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 4px auto 0;
+      max-width: 34ch
+    }
+
+    .ev-card .note {
+      margin-top: 14px;
+      font-size: 12.5px;
+      font-style: italic;
+      color: var(--bronze)
+    }
+
+    .adat {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      gap: clamp(18px, 5vw, 64px);
+      flex-wrap: wrap;
+      margin: 80px 0 60px
+    }
+
+    .adat::before {
+      content: "";
+      position: absolute;
+      left: 6%;
+      right: 6%;
+      top: 23px;
+      height: 1px;
+      background: var(--line)
+    }
+
+    .adat-step {
+      position: relative;
+      text-align: center;
+      background: transparent
+    }
+
+    .adat-step .bola {
+      width: 46px;
+      height: 46px;
+      margin: 0 auto;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: 'Marcellus', serif;
+      font-size: 1.05rem;
+      color: var(--maroon);
+      background: var(--paper2)
+    }
+
+    .adat-step span {
+      display: block;
+      margin-top: 10px;
+      font-size: 10.5px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .adat-cap {
+      text-align: center;
+      font-size: 12.5px;
+      font-style: italic;
+      color: var(--muted);
+      margin: -40px 0 40px
+    }
+
+    .prot {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 48px;
+      max-width: 900px;
+      margin: 0 auto;
+      list-style: none
+    }
+
+    .prot li {
+      position: relative;
+      padding: 6px 0 6px 26px;
+      font-size: 14px;
+      color: var(--muted)
+    }
+
+    .prot li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 14px;
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+      transform: rotate(45deg)
+    }
+
+    .ev-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 48px
+    }
+
+    /* ================= RSVP & Doa ================= */
+    .rsvp-grid {
+      display: grid;
+      grid-template-columns: 6fr 5fr;
+      gap: clamp(32px, 6vw, 90px);
+      align-items: start
+    }
+
+    .paper {
+      position: relative;
+      background-color: var(--card);
+      background-image: radial-gradient(130% 130% at 50% 0%, rgba(0, 0, 0, 0) 55%, rgba(96, 62, 28, .09)), var(--kawung-maroon);
+      border: 1px solid var(--line);
+      box-shadow: inset 0 0 0 5px var(--card), inset 0 0 0 6px rgba(150, 117, 74, .55), var(--shadow);
+      padding: clamp(26px, 4vw, 46px)
+    }
+
+    .paper h3 {
+      font-family: 'Marcellus', serif;
+      font-weight: 400;
+      font-size: 1.45rem;
+      margin-bottom: 26px;
+      text-align: center
+    }
+
+    .field {
+      margin-bottom: 24px
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 9px;
+      font-size: 10px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--bronze)
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      padding: 9px 2px;
+      font: inherit;
+      color: var(--ink);
+      outline: none;
+      border-radius: 0
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--gold)
+    }
+
+    .field ::placeholder {
+      color: var(--muted);
+      opacity: .6
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 84px
+    }
+
+    .seg {
+      display: inline-flex;
+      gap: 5px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 999px
+    }
+
+    .seg button {
+      padding: 9px 20px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      color: var(--muted);
+      transition: .25s
+    }
+
+    .seg button.on {
+      background: var(--maroon);
+      color: var(--gold2)
+    }
+
+    .step {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px
+    }
+
+    .step button {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      color: var(--bronze)
+    }
+
+    .step button:hover {
+      color: var(--maroon)
+    }
+
+    .step b {
+      min-width: 36px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 14.5px
+    }
+
+    .step.off {
+      opacity: .4;
+      pointer-events: none
+    }
+
+    .err {
+      display: none;
+      margin-top: 8px;
+      font-size: 12.5px;
+      color: var(--maroon)
+    }
+
+    .err.show {
+      display: block
+    }
+
+    .form-note {
+      margin-top: 16px;
+      font-size: 12.5px;
+      font-style: italic;
+      color: var(--muted)
+    }
+
+    /* Gulungan doa */
+    .scroll {
+      position: relative;
+      background-color: var(--card);
+      background-image: radial-gradient(130% 130% at 50% 0%, rgba(0, 0, 0, 0) 55%, rgba(96, 62, 28, .09)), var(--kawung-maroon);
+      border: 1px solid var(--line);
+      box-shadow: inset 0 0 0 5px var(--card), inset 0 0 0 6px rgba(150, 117, 74, .55), var(--shadow);
+      padding: 10px clamp(16px, 2.4vw, 26px) 12px
+    }
+
+    .rod {
+      height: 15px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #7A5A33, var(--gold) 46%, #7A5A33);
+      box-shadow: 0 2px 5px rgba(50, 30, 10, .35);
+      position: relative
+    }
+
+    .rod::before,
+    .rod::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--gold2);
+      border: 1px solid #8a6a3f
+    }
+
+    .rod::before {
+      left: -5px
+    }
+
+    .rod::after {
+      right: -5px
+    }
+
+    .scroll-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 16px 4px 10px
+    }
+
+    .scroll-head h3 {
+      font-family: 'Marcellus', serif;
+      font-weight: 400;
+      font-size: 1.25rem
+    }
+
+    .scroll-head span {
+      font-size: 10.5px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .scroll-body {
+      max-height: 440px;
+      overflow: auto;
+      padding: 0 6px;
+      scrollbar-width: thin
+    }
+
+    .g-item {
+      display: flex;
+      gap: 13px;
+      padding: 15px 2px;
+      border-bottom: 1px dashed rgba(150, 117, 74, .4)
+    }
+
+    .g-item:last-child {
+      border-bottom: none
+    }
+
+    .g-ava {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: 'Marcellus', serif;
+      font-size: 14px;
+      color: var(--gold2)
+    }
+
+    .g-meta {
+      flex: 1;
+      min-width: 0
+    }
+
+    .g-top {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex-wrap: wrap
+    }
+
+    .g-name {
+      font-size: 14px;
+      font-weight: 600
+    }
+
+    .g-badge {
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 2.5px 9px
+    }
+
+    .g-badge.hadir {
+      color: var(--maroon);
+      border-color: var(--maroon)
+    }
+
+    .g-time {
+      margin-left: auto;
+      font-size: 11px;
+      color: var(--muted)
+    }
+
+    .g-msg {
+      margin-top: 4px;
+      font-size: 13.5px;
+      font-style: italic;
+      color: var(--muted)
+    }
+
+    .scroll-foot {
+      text-align: center;
+      padding-top: 12px;
+      font-size: 11.5px;
+      font-style: italic;
+      color: var(--muted)
+    }
+
+    /* ================= Galeri ================= */
+    .car-frame {
+      position: relative;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: var(--card)
+    }
+
+    .cn {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--gold)
+    }
+
+    .cn.c1 {
+      top: -2px;
+      left: -2px;
+      border-right: none;
+      border-bottom: none
+    }
+
+    .cn.c2 {
+      top: -2px;
+      right: -2px;
+      border-left: none;
+      border-bottom: none
+    }
+
+    .cn.c3 {
+      bottom: -2px;
+      right: -2px;
+      border-left: none;
+      border-top: none
+    }
+
+    .cn.c4 {
+      bottom: -2px;
+      left: -2px;
+      border-right: none;
+      border-top: none
+    }
+
+    .car {
+      position: relative;
+      aspect-ratio: 16/9.6;
+      overflow: hidden;
+      cursor: grab
+    }
+
+    .car:active {
+      cursor: grabbing
+    }
+
+    .car-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.15s ease;
+      z-index: 1
+    }
+
+    .car-slide.on {
+      opacity: 1;
+      z-index: 2
+    }
+
+    .car-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: sepia(.16) saturate(.94)
+    }
+
+    .car-slide.on img {
+      animation: kb 6.8s linear forwards
+    }
+
+    @keyframes kb {
+      from {
+        transform: scale(1.07)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+    .car-btn {
+      position: absolute;
+      z-index: 5;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      background: var(--card);
+      color: var(--bronze);
+      display: grid;
+      place-items: center;
+      transition: .25s
+    }
+
+    .car-btn:hover {
+      background: var(--maroon);
+      border-color: var(--maroon);
+      color: var(--gold2)
+    }
+
+    .car-btn svg {
+      width: 17px;
+      height: 17px
+    }
+
+    .car-btn.prev {
+      left: 14px
+    }
+
+    .car-btn.next {
+      right: 14px
+    }
+
+    .car-cap {
+      position: absolute;
+      z-index: 5;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      background: var(--card);
+      border: 1px solid var(--gold);
+      padding: 7px 16px;
+      font-size: 10.5px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--ink)
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 13px;
+      margin-top: 22px
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border: 1px solid var(--bronze);
+      transform: rotate(45deg);
+      padding: 0;
+      transition: .25s
+    }
+
+    .dot.on {
+      background: var(--gold);
+      border-color: var(--gold)
+    }
+
+    .car-note {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 12px;
+      font-style: italic;
+      color: var(--muted)
+    }
+
+    /* ================= Amplop Digital ================= */
+    .gift {
+      position: relative;
+      background-color: var(--maroon2);
+      background-image: var(--kawung-gold);
+      border: 1px solid var(--gold);
+      box-shadow: inset 0 0 0 6px var(--maroon2), inset 0 0 0 7px rgba(226, 203, 140, .55), var(--shadow);
+      padding: clamp(30px, 5vw, 60px);
+      margin-top: 8px
+    }
+
+    .gcorn {
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      color: var(--gold)
+    }
+
+    .gift h3 {
+      font-family: 'Marcellus', serif;
+      font-weight: 400;
+      color: var(--gold2);
+      font-size: 1.15rem;
+      letter-spacing: .06em;
+      margin: 34px 0 18px;
+      text-align: center
+    }
+
+    .gift h3::after {
+      content: "";
+      display: block;
+      width: 56px;
+      height: 1px;
+      background: rgba(226, 203, 140, .5);
+      margin: 10px auto 0
+    }
+
+    .qris-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px
+    }
+
+    .qris-chip {
+      font-size: 11px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--maroon2);
+      background: var(--gold);
+      padding: 6px 18px;
+      border: 1px solid var(--gold2)
+    }
+
+    .qris-box {
+      background: #fff;
+      padding: 14px;
+      border: 1px solid var(--gold);
+      box-shadow: 0 0 0 5px rgba(226, 203, 140, .18)
+    }
+
+    .qris-box #qr {
+      width: 212px;
+      height: 212px;
+      display: grid;
+      place-items: center
+    }
+
+    .qris-box #qr img,
+    .qris-box #qr canvas {
+      width: 212px !important;
+      height: 212px !important
+    }
+
+    .qris-cap {
+      font-size: 12.5px;
+      font-style: italic;
+      color: #E5D3A8;
+      text-align: center;
+      max-width: 44ch
+    }
+
+    .g-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      background: var(--card);
+      border: 1px solid rgba(226, 203, 140, .4);
+      padding: 15px 18px;
+      margin-bottom: 12px
+    }
+
+    .g-bank {
+      min-width: 82px;
+      font-family: 'Marcellus', serif;
+      font-size: 15px;
+      color: var(--maroon)
+    }
+
+    .g-meta2 {
+      flex: 1;
+      min-width: 200px
+    }
+
+    .g-no {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      font-variant-numeric: tabular-nums
+    }
+
+    .g-an {
+      font-size: 12.5px;
+      color: var(--muted)
+    }
+
+    .copy {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 17px;
+      border: 1px solid var(--bronze);
+      color: var(--ink);
+      font-size: 10.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      transition: .25s
+    }
+
+    .copy:hover {
+      background: var(--maroon);
+      border-color: var(--maroon);
+      color: var(--gold2)
+    }
+
+    .copy svg {
+      width: 13px;
+      height: 13px
+    }
+
+    .gift .btn.ghost {
+      border-color: var(--gold);
+      color: var(--gold2)
+    }
+
+    .gift .btn.ghost:hover {
+      background: var(--gold);
+      color: var(--maroon2);
+      border-color: var(--gold)
+    }
+
+    /* ================= Footer ================= */
+    footer {
+      background: #221810;
+      color: #EADFC8;
+      padding: 0 0 34px
+    }
+
+    footer .tumpal {
+      background-image: var(--tumpal-up)
+    }
+
+    .f-in {
+      padding-top: 88px
+    }
+
+    .f-head {
+      text-align: center
+    }
+
+    .f-mono {
+      display: grid;
+      place-items: center;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 22px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      font-family: 'Marcellus', serif;
+      font-size: 19px;
+      color: var(--gold2)
+    }
+
+    footer h2 {
+      color: var(--gold2)
+    }
+
+    .f-fam {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(28px, 5vw, 80px);
+      max-width: 960px;
+      margin: 54px auto 0
+    }
+
+    .f-fam h3 {
+      text-align: center;
+      font-family: 'Marcellus', serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      letter-spacing: .08em;
+      color: var(--gold2);
+      margin-bottom: 18px
+    }
+
+    .f-fam ul {
+      list-style: none
+    }
+
+    .f-fam li {
+      padding: 10px 4px;
+      border-bottom: 1px dashed rgba(226, 203, 140, .28);
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap
+    }
+
+    .f-fam li b {
+      font-weight: 500;
+      font-size: 14.5px
+    }
+
+    .f-fam li i {
+      font-size: 12px;
+      color: #B7A479;
+      font-style: italic
+    }
+
+    .f-close {
+      max-width: 640px;
+      margin: 70px auto 0;
+      text-align: center;
+      font-size: 15px;
+      color: #D8C9A6
+    }
+
+    .f-close .fat {
+      margin-top: 16px;
+      font-size: 13.5px
+    }
+
+    .f-close .fat b {
+      color: var(--gold2);
+      font-weight: 600;
+      letter-spacing: .06em
+    }
+
+    .f-salam {
+      text-align: center;
+      margin-top: 34px;
+      font-size: 15px
+    }
+
+    .f-names {
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(2.6rem, 7vw, 4rem);
+      color: var(--gold2);
+      margin-top: 8px
+    }
+
+    .f-names i {
+      font-style: normal;
+      font-size: .72em;
+      color: var(--gold)
+    }
+
+    .f-grat {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 12px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #B7A479
+    }
+
+    .f-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 66px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(226, 203, 140, .25)
+    }
+
+    .f-bottom span {
+      font-size: 10.5px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #B7A479
+    }
+
+    .backtop {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10.5px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold2)
+    }
+
+    .backtop:hover {
+      color: #fff
+    }
+
+    .backtop svg {
+      width: 13px;
+      height: 13px
+    }
+
+    /* ================= FAB / Toast ================= */
+    .fab {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 210;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--maroon);
+      color: var(--gold2);
+      border: 1px solid var(--gold);
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .6s ease .9s, background .25s, transform .25s
+    }
+
+    body.open .fab {
+      opacity: 1;
+      pointer-events: auto
+    }
+
+    .fab:hover {
+      background: var(--gold);
+      color: var(--maroon2);
+      transform: scale(1.05)
+    }
+
+    .fab .ic-play {
+      width: 19px;
+      height: 19px
+    }
+
+    .eq {
+      display: none;
+      align-items: flex-end;
+      gap: 3px;
+      height: 19px
+    }
+
+    .eq i {
+      width: 3px;
+      height: 6px;
+      border-radius: 2px;
+      background: currentColor;
+      animation: eqb 1s ease-in-out infinite
+    }
+
+    .eq i:nth-child(2) {
+      animation-delay: .18s
+    }
+
+    .eq i:nth-child(3) {
+      animation-delay: .36s
+    }
+
+    @keyframes eqb {
+
+      0%,
+      100% {
+        height: 5px
+      }
+
+      50% {
+        height: 19px
+      }
+    }
+
+    .fab.playing .ic-play {
+      display: none
+    }
+
+    .fab.playing .eq {
+      display: flex
+    }
+
+    .toasts {
+      position: fixed;
+      left: 50%;
+      bottom: 26px;
+      transform: translateX(-50%);
+      z-index: 500;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px
+    }
+
+    .toast {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: 13px;
+      border: 1px solid var(--gold);
+      box-shadow: var(--shadow);
+      animation: tin .35s cubic-bezier(.22, 1, .36, 1)
+    }
+
+    .toast svg {
+      width: 15px;
+      height: 15px;
+      color: var(--gold)
+    }
+
+    .toast.out {
+      animation: tout .3s forwards
+    }
+
+    @keyframes tin {
+      from {
+        opacity: 0;
+        transform: translateY(14px)
+      }
+    }
+
+    @keyframes tout {
+      to {
+        opacity: 0;
+        transform: translateY(10px)
+      }
+    }
+
+    /* ================= Responsif ================= */
+    @media(max-width:920px) {
+      .tb-nav {
+        display: none
+      }
+
+      .couple-grid {
+        grid-template-columns: 1fr
+      }
+
+      .amp-cell {
+        padding-top: 0;
+        margin: 10px 0
+      }
+
+      .rsvp-grid {
+        grid-template-columns: 1fr
+      }
+
+      .prot {
+        grid-template-columns: 1fr
+      }
+
+      .f-fam {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media(max-width:640px) {
+      section {
+        padding: 80px 0
+      }
+
+      .ev-grid {
+        grid-template-columns: 1fr
+      }
+
+      .car {
+        aspect-ratio: 4/3
+      }
+
+      .car-btn {
+        width: 38px;
+        height: 38px
+      }
+
+      .adat {
+        gap: 20px 28px
+      }
+
+      .adat::before {
+        display: none
+      }
+
+      .g-no {
+        font-size: 14.5px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      * {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important
+      }
+    }
+  </style>
+</head>
+
+<body class="lock">
+
+  <!-- ====== Simbol & Definisi SVG ====== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <clipPath id="archClip" clipPathUnits="objectBoundingBox">
+        <path
+          d="M.05 1 L.05 .45 C.05 .27 .12 .175 .255 .16 C.385 .145 .468 .105 .5 .02 C.532 .105 .615 .145 .745 .16 C.88 .175 .95 .27 .95 .45 L.95 1 Z" />
+      </clipPath>
+      <symbol id="s-gun" viewBox="0 0 120 190">
+        <g fill="none" stroke="currentColor">
+          <path vector-effect="non-scaling-stroke" stroke-width="2"
+            d="M60 6C64 20 74 28 86 36C102 47 108 62 102 79C98 91 90 98 94 110C99 125 90 139 76 145C66 149 60 156 60 168C60 156 54 149 44 145C30 139 21 125 26 110C30 98 22 91 18 79C12 62 18 47 34 36C46 28 56 20 60 6Z" />
+          <path vector-effect="non-scaling-stroke" stroke-width="1.6" d="M60 26V150" />
+          <path vector-effect="non-scaling-stroke" stroke-width="1.6"
+            d="M60 52C52 58 45 60 38 60M60 52C68 58 75 60 82 60" />
+          <path vector-effect="non-scaling-stroke" stroke-width="1.6"
+            d="M60 84C50 90 43 92 34 92M60 84C70 90 77 92 86 92" />
+          <path vector-effect="non-scaling-stroke" stroke-width="1.6"
+            d="M60 116C52 122 46 124 40 124M60 116C68 122 74 124 80 124" />
+        </g>
+      </symbol>
+      <symbol id="s-div" viewBox="0 0 240 26">
+        <g fill="none" stroke="currentColor" stroke-width="1.5">
+          <path vector-effect="non-scaling-stroke" d="M10 13H98M142 13H230" />
+          <path vector-effect="non-scaling-stroke" d="M120 3L130 13L120 23L110 13Z" />
+          <path vector-effect="non-scaling-stroke"
+            d="M98 13C106 13 110 7 116 5M98 13C106 13 110 19 116 21M142 13C134 13 130 7 124 5M142 13C134 13 130 19 124 21" />
+        </g>
+        <circle cx="104" cy="13" r="1.6" fill="currentColor" />
+        <circle cx="136" cy="13" r="1.6" fill="currentColor" />
+      </symbol>
+      <symbol id="s-corn" viewBox="0 0 60 60">
+        <g fill="none" stroke="currentColor" stroke-width="1.6">
+          <path vector-effect="non-scaling-stroke" d="M2 58V20C2 10 10 2 20 2H58" />
+          <path vector-effect="non-scaling-stroke" d="M2 44V24C2 15 15 2 24 2H44" opacity=".55" />
+          <path vector-effect="non-scaling-stroke" d="M13 10L16.5 13.5L13 17L9.5 13.5Z" />
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ====== Gerbang Pembuka ====== -->
+  <div class="cover" id="cover">
+    <div class="pane left"></div>
+    <div class="pane right"></div>
+    <div class="cover-core">
+      <div class="emb">
+        <svg class="emb-ring" viewBox="0 0 140 140">
+          <circle cx="70" cy="70" r="66" fill="none" stroke="currentColor" stroke-width="1.4" />
+          <circle cx="70" cy="70" r="57" fill="none" stroke="currentColor" stroke-width="1" opacity=".5" />
+        </svg>
+        <svg class="emb-gun">
+          <use href="#s-gun" />
+        </svg>
+        <svg class="emb-cres" viewBox="0 0 28 28">
+          <path d="M23.5 14.5A11.5 11.5 0 1 1 9.5.5a9 9 0 1 0 14 14Z" fill="currentColor" />
+        </svg>
+      </div>
+      <p class="cov-eyebrow">Undangan Pernikahan</p>
+      <p class="cov-arab">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+      <h1 class="cov-names">Ajeng <i>&amp;</i> Rizky</h1>
+      <p class="cov-date">Sabtu · 12 September 2026 · Yogyakarta</p>
+      <button class="cov-btn" id="openBtn">Buka Undangan</button>
+      <p class="cov-hint">Undangan terbuka disertai alunan gamelan — mohon nyalakan suara perangkat Anda.</p>
+    </div>
+  </div>
+
+  <!-- ====== Topbar ====== -->
+  <div class="topbar" id="topbar">
+    <a class="brand" href="#hero"><span class="mono">A·R</span><span class="bt">12 · 09 · 2026</span></a>
+    <nav class="tb-nav">
+      <a href="#mempelai">Mempelai</a><a href="#acara">Acara</a><a href="#rsvp">Doa &amp; RSVP</a><a
+        href="#galeri">Galeri</a><a href="#amplop">Tanda Kasih</a>
+    </nav>
+  </div>
+
+  <!-- ====== Hero / Sapaan ====== -->
+  <header class="hero" id="hero">
+    <svg class="wm">
+      <use href="#s-gun" />
+    </svg>
+    <div class="hero-in">
+      <p class="eyebrow rv">Assalamu’alaikum Wr. Wb.</p>
+      <p class="hero-arab rv" style="--d:.08s">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+      <p class="hero-salam rv" style="--d:.14s">Dengan memohon rahmat dan ridha Allah SWT,<br>kami mengundang
+        Bapak/Ibu/Saudara/i ke acara pernikahan kami:</p>
+      <h1 class="hero-names rv" style="--d:.2s">Ajeng <i>&amp;</i> Rizky</h1>
+      <div class="odiv rv" style="--d:.26s"><svg width="100%" height="26">
+          <use href="#s-div" />
+        </svg></div>
+      <p class="hero-meta rv" style="--d:.32s">Sabtu, <b>12 September 2026</b> · Pendopo Agung Taman Budaya · Yogyakarta
+      </p>
+      <div class="hero-cta rv" style="--d:.4s">
+        <a class="btn" href="#acara">Lihat Rangkaian Acara</a>
+        <a class="btn ghost" href="#rsvp">Kirim Doa Restu</a>
+      </div>
+    </div>
+    <div class="cue">Gulir<span class="line"></span></div>
+  </header>
+
+  <main>
+    <!-- ====== 01 Mempelai ====== -->
+    <section id="mempelai">
+      <div class="container">
+        <div class="shead rv">
+          <p class="eyebrow">Mempelai</p>
+          <h2>Dua Hati, <em>Satu</em> Janji</h2>
+          <div class="odiv"><svg width="100%" height="26">
+              <use href="#s-div" />
+            </svg></div>
+        </div>
+
+        <p class="couple-intro rv"><span class="salam" title="Salam Sunda — dijawab dengan “rampes”">Sampurasun…</span>
+          Dengan penuh syukur dan rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk berkenan hadir serta memberikan
+          doa restu. Segala kekurangan dalam hati maupun penyampaian, kami mohon dimaafkan.</p>
+
+        <div class="couple-grid">
+          <article class="person rv">
+            <figure class="arch">
+              <svg class="finial" viewBox="0 0 40 44">
+                <circle cx="20" cy="6" r="3" fill="currentColor" />
+                <path d="M20 12c3.5 6 8 9 14 10-6 2-10.5 5-14 11-3.5-6-8-9-14-11 6-1 10.5-4 14-10Z" fill="none"
+                  stroke="currentColor" stroke-width="1.6" />
+              </svg>
+              <div class="arch-in">
+                <img src="https://picsum.photos/seed/ajeng-bride/660/917.jpg" alt="Ajeng Saraswati Kusumaningrum">
+                <svg class="arch-f" viewBox="0 0 1 1" preserveAspectRatio="none">
+                  <path
+                    d="M.05 1 L.05 .45 C.05 .27 .12 .175 .255 .16 C.385 .145 .468 .105 .5 .02 C.532 .105 .615 .145 .745 .16 C.88 .175 .95 .27 .95 .45 L.95 1 Z"
+                    fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke" />
+                  <path
+                    d="M.05 1 L.05 .45 C.05 .27 .12 .175 .255 .16 C.385 .145 .468 .105 .5 .02 C.532 .105 .615 .145 .745 .16 C.88 .175 .95 .27 .95 .45 L.95 1 Z"
+                    fill="none" stroke="currentColor" stroke-width="1" opacity=".5"
+                    transform="translate(0.018 0.03) scale(0.964)" vector-effect="non-scaling-stroke" />
+                </svg>
+              </div>
+              <div class="arch-base"></div>
+            </figure>
+            <p class="p-role">Mempelai Wanita</p>
+            <h3>Ajeng Saraswati Kusumaningrum, S.Ds.</h3>
+            <p class="p-desc">Putri tunggal yang tumbuh bersama denting gamelan dan aroma minyak kayu putih pendopo
+              rumah kakek. Kini menekuni seni batik tulis di Kotagede.</p>
+            <p class="p-parents">Putri dari Bpk. R. Kusumo Adiningrat &amp; Ibu Endang Suryowati</p>
+            <a class="ig" href="https://instagram.com/ajengsaraswati" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+              @ajengsaraswati
+            </a>
+          </article>
+
+          <div class="amp-cell rv" style="--d:.1s">
+            <span class="amp">&amp;</span>
+            <span class="amp-sub">Sangkan Paraning Dumadi</span>
+          </div>
+
+          <article class="person rv" style="--d:.18s">
+            <figure class="arch">
+              <svg class="finial" viewBox="0 0 40 44">
+                <circle cx="20" cy="6" r="3" fill="currentColor" />
+                <path d="M20 12c3.5 6 8 9 14 10-6 2-10.5 5-14 11-3.5-6-8-9-14-11 6-1 10.5-4 14-10Z" fill="none"
+                  stroke="currentColor" stroke-width="1.6" />
+              </svg>
+              <div class="arch-in">
+                <img src="https://picsum.photos/seed/rizky-groom/660/917.jpg" alt="Rizky Fadillah Ramadhan">
+                <svg class="arch-f" viewBox="0 0 1 1" preserveAspectRatio="none">
+                  <path
+                    d="M.05 1 L.05 .45 C.05 .27 .12 .175 .255 .16 C.385 .145 .468 .105 .5 .02 C.532 .105 .615 .145 .745 .16 C.88 .175 .95 .27 .95 .45 L.95 1 Z"
+                    fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke" />
+                  <path
+                    d="M.05 1 L.05 .45 C.05 .27 .12 .175 .255 .16 C.385 .145 .468 .105 .5 .02 C.532 .105 .615 .145 .745 .16 C.88 .175 .95 .27 .95 .45 L.95 1 Z"
+                    fill="none" stroke="currentColor" stroke-width="1" opacity=".5"
+                    transform="translate(0.018 0.03) scale(0.964)" vector-effect="non-scaling-stroke" />
+                </svg>
+              </div>
+              <div class="arch-base"></div>
+            </figure>
+            <p class="p-role">Mempelai Pria</p>
+            <h3>Rizky Fadillah Ramadhan, S.T.</h3>
+            <p class="p-desc">Anak kedua dariBandung yang dibesarkan dengan adat Sunda dan dididik dalam tarikh agama.
+              Seorang perencana tata kota yang gemar memainkan kecapi di sela pekerjaan.</p>
+            <p class="p-parents">Putra dari Bpk. H. Dedi Ramdani &amp; Ibu Hj. Nia Kurniasih</p>
+            <a class="ig" href="https://instagram.com/rizkyfadillah" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+              @rizkyfadillah
+            </a>
+          </article>
+        </div>
+
+        <div class="couple-quote rv">
+          <div class="odiv"><svg width="100%" height="26">
+              <use href="#s-div" />
+            </svg></div>
+          <p style="margin-top:18px">“Sangkan Paraning Dumadi” — dari Sang Pencipta kami berasal, kepada-Nya pula
+            segalanya bermuara. Atas rahmat-Nya pula dua jiwa ini dipertemukan.</p>
+          <span>Doa Kebahagiaan</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 02 Rincian Acara ====== -->
+    <section id="acara" class="band">
+      <div class="tumpal t"></div>
+      <div class="container">
+        <div class="shead rv" style="margin-top:36px">
+          <p class="eyebrow">Rincian Acara</p>
+          <h2>Rangkaian Hari <em>Bahagia</em></h2>
+          <div class="odiv"><svg width="100%" height="26">
+              <use href="#s-div" />
+            </svg></div>
+        </div>
+
+        <div class="cd rv" aria-label="Hitung mundur menuju akad nikah">
+          <div class="cd-g"><b id="cd-d">00</b><span>Hari</span></div>
+          <span class="cd-sep">◆</span>
+          <div class="cd-g"><b id="cd-h">00</b><span>Jam</span></div>
+          <span class="cd-sep">◆</span>
+          <div class="cd-g"><b id="cd-m">00</b><span>Menit</span></div>
+          <span class="cd-sep">◆</span>
+          <div class="cd-g"><b id="cd-s">00</b><span>Detik</span></div>
+          <p class="cd-note" id="cdNote"></p>
+        </div>
+
+        <div class="ev-grid">
+          <article class="ev-card rv">
+            <div class="num">12</div>
+            <div class="my">September 2026 · Sabtu</div>
+            <h3>Akad Nikah</h3>
+            <p class="time">08.00 – 10.00 <span class="wib">WIB</span></p>
+            <div class="odiv" style="margin:6px auto 0;width:150px"><svg width="100%" height="26">
+                <use href="#s-div" />
+              </svg></div>
+            <p class="ven">Pendopo Agung, Taman Budaya Yogyakarta</p>
+            <p class="addr">Jl. Sriwedani No. 1, Kota Yogyakarta, DI Yogyakarta 55171</p>
+            <p class="note">Dilembagakan secara tertib sesuai syariat; disaksikan keluarga inti dan kerabat dekat.</p>
+          </article>
+          <article class="ev-card rv" style="--d:.12s">
+            <div class="num">12</div>
+            <div class="my">September 2026 · Sabtu</div>
+            <h3>Resepsi &amp; Ngunduh Mantu</h3>
+            <p class="time">11.00 – 14.00 <span class="wib">WIB</span></p>
+            <div class="odiv" style="margin:6px auto 0;width:150px"><svg width="100%" height="26">
+                <use href="#s-div" />
+              </svg></div>
+            <p class="ven">Pendopo Agung, Taman Budaya Yogyakarta</p>
+            <p class="addr">Jl. Sriwedani No. 1, Kota Yogyakarta, DI Yogyakarta 55171</p>
+            <p class="note">Terbuka bagi seluruh tamu undangan; diiringi gamelan Jawa dan degung Sunda.</p>
+          </article>
+        </div>
+
+        <div class="adat rv">
+          <div class="adat-step"><span class="bola">I</span><span>Siraman</span></div>
+          <div class="adat-step"><span class="bola">II</span><span>Midodareni</span></div>
+          <div class="adat-step"><span class="bola">III</span><span>Panggih</span></div>
+          <div class="adat-step"><span class="bola">IV</span><span>Sungkeman</span></div>
+        </div>
+        <p class="adat-cap rv">Rangkaian adat Jawa yang akan dilalui kedua mempelai — dipandu sesepuh keluarga.</p>
+
+        <ul class="prot rv">
+          <li>Mohon hadir 15 menit lebih awal; area parkir tersedia di kompleks Taman Budaya.</li>
+          <li>Dress code: batik atau kebaya bernuansa earth — cokelat, marun, hijau zaitun, ataupun emas.</li>
+          <li>Prosesi adat dipandu juru basa; tamu dipersilakan menyaksikan dengan khidmat dari tempat duduk.</li>
+          <li>Sungkeman hanya diikuti keluarga inti kedua mempelai.</li>
+          <li>Setelah salaman, tamu dipersilakan berfoto bersama mempelai di panggung pendopo.</li>
+          <li>Doa bersama akan dipimpin oleh sesepuh — mohon merespon dengan “Aamiin”.</li>
+        </ul>
+
+        <div class="ev-actions rv">
+          <button class="btn ghost" id="icsBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Simpan ke Kalender
+          </button>
+          <a class="btn ghost"
+            href="https://www.google.com/maps/search/?api=1&query=Taman+Budaya+Yogyakarta+Jl.+Sriwedani+No.+1"
+            target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            Petunjuk Lokasi
+          </a>
+        </div>
+      </div>
+      <div class="tumpal b"></div>
+    </section>
+
+    <!-- ====== 03 RSVP & Ucapan ====== -->
+    <section id="rsvp">
+      <div class="container">
+        <div class="shead rv">
+          <p class="eyebrow">Konfirmasi &amp; Doa</p>
+          <h2>Kirim Doa, <em>Tunaikan</em> RSVP</h2>
+          <div class="odiv"><svg width="100%" height="26">
+              <use href="#s-div" />
+            </svg></div>
+        </div>
+        <div class="rsvp-grid">
+          <form id="rsvpForm" class="paper rv" novalidate>
+            <h3>Buku Tamu Digital</h3>
+            <div class="field">
+              <label for="fName">Nama Lengkap</label>
+              <input type="text" id="fName" placeholder="cth. H. Ahmad Syakir" autocomplete="name">
+              <p class="err" id="errName">Mohon isi nama Anda terlebih dahulu.</p>
+            </div>
+            <div class="field">
+              <label>Konfirmasi Kehadiran</label>
+              <div class="seg" id="segAttend">
+                <button type="button" data-val="hadir" class="on">Insya Allah Hadir</button>
+                <button type="button" data-val="absent">Berhalangan</button>
+              </div>
+            </div>
+            <div class="field">
+              <label>Jumlah Tamu</label>
+              <div class="step" id="stepWrap">
+                <button type="button" id="qtyMinus" aria-label="Kurangi">−</button>
+                <b id="qtyVal">1</b>
+                <button type="button" id="qtyPlus" aria-label="Tambah">+</button>
+              </div>
+            </div>
+            <div class="field">
+              <label for="fMsg">Doa &amp; Ucapan</label>
+              <textarea id="fMsg" placeholder="Tuliskan doa terbaik untuk kedua mempelai..."></textarea>
+            </div>
+            <button class="btn" type="submit" style="width:100%;justify-content:center">
+              Kirim Doa Restu
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </button>
+            <p class="form-note">Mohon konfirmasi sebelum 29 Agustus 2026 agar sajian dan tempat duduk dapat kami
+              siapkan dengan layak.</p>
+          </form>
+
+          <aside class="scroll rv" style="--d:.12s">
+            <div class="rod"></div>
+            <div class="scroll-head">
+              <h3>Gulungan Doa</h3>
+              <span id="gCount">0 doa</span>
+            </div>
+            <div class="scroll-body" id="gList"></div>
+            <p class="scroll-foot">“Semoga Allah menyatukan yang baik, dan mempertemukan kita semua di tempat yang baik
+              pula.”</p>
+            <div class="rod"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 04 Galeri ====== -->
+    <section id="galeri" class="band">
+      <div class="tumpal t"></div>
+      <div class="container">
+        <div class="shead rv" style="margin-top:36px">
+          <p class="eyebrow">Galeri</p>
+          <h2>Sepenggal <em>Kenangan</em></h2>
+          <div class="odiv"><svg width="100%" height="26">
+              <use href="#s-div" />
+            </svg></div>
+        </div>
+        <div class="car-frame rv">
+          <i class="cn c1"></i><i class="cn c2"></i><i class="cn c3"></i><i class="cn c4"></i>
+          <div class="car" id="car">
+            <div id="carTrack"></div>
+            <button class="car-btn prev" id="carPrev" aria-label="Foto sebelumnya"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+              </svg></button>
+            <button class="car-btn next" id="carNext" aria-label="Foto berikutnya"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg></button>
+            <span class="car-cap" id="carCap">Pemberkasan &amp; Lamaran</span>
+          </div>
+        </div>
+        <div class="dots rv" id="carDots" style="--d:.1s"></div>
+        <p class="car-note rv" style="--d:.16s">Galeri berganti perlahan — geser atau gunakan panah untuk melihat
+          manual.</p>
+      </div>
+      <div class="tumpal b"></div>
+    </section>
+
+    <!-- ====== 05 Amplop Digital ====== -->
+    <section id="amplop">
+      <div class="container">
+        <div class="shead rv">
+          <p class="eyebrow">Amplop Digital</p>
+          <h2>Tanda Kasih &amp; <em>Doa</em></h2>
+          <div class="odiv"><svg width="100%" height="26">
+              <use href="#s-div" />
+            </svg></div>
+        </div>
+        <div class="gift rv">
+          <svg class="gcorn" style="top:10px;left:10px">
+            <use href="#s-corn" />
+          </svg>
+          <svg class="gcorn" style="top:10px;right:10px;transform:rotate(90deg)">
+            <use href="#s-corn" />
+          </svg>
+          <svg class="gcorn" style="bottom:10px;right:10px;transform:rotate(180deg)">
+            <use href="#s-corn" />
+          </svg>
+          <svg class="gcorn" style="bottom:10px;left:10px;transform:rotate(270deg)">
+            <use href="#s-corn" />
+          </svg>
+
+          <div class="qris-wrap">
+            <span class="qris-chip">QRIS — Satu QR untuk Semua</span>
+            <div class="qris-box">
+              <div id="qr"></div>
+            </div>
+            <p class="qris-cap">Pindai dengan aplikasi e-wallet atau m-banking apa pun. Cocok untuk semua usaha — dari
+              sepuh hingga adik-adik kita.</p>
+          </div>
+
+          <h3>Transfer Bank</h3>
+          <div class="g-row">
+            <span class="g-bank">BCA</span>
+            <div class="g-meta2">
+              <div class="g-no">8830 1234 56</div>
+              <div class="g-an">a.n. Ajeng Saraswati Kusumaningrum</div>
+            </div>
+            <button class="copy" data-copy="8830123456"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" />
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+              </svg>Salin</button>
+          </div>
+          <div class="g-row">
+            <span class="g-bank">Mandiri</span>
+            <div class="g-meta2">
+              <div class="g-no">1370 0098 7654</div>
+              <div class="g-an">a.n. Rizky Fadillah Ramadhan</div>
+            </div>
+            <button class="copy" data-copy="137000987654"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" />
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+              </svg>Salin</button>
+          </div>
+
+          <h3>Kirim Kado</h3>
+          <div class="g-row">
+            <div class="g-meta2">
+              <div class="g-no" style="font-size:14.5px;letter-spacing:.02em">Griya Saraswati — Jl. Kaliurang KM 7 No.
+                27, Sleman, DI Yogyakarta 55281</div>
+              <div class="g-an">a.n. Keluarga Kusumaningrat</div>
+            </div>
+            <button class="copy"
+              data-copy="Griya Saraswati, Jl. Kaliurang KM 7 No. 27, Sleman, DI Yogyakarta 55281 (a.n. Keluarga Kusumaningrat)"><svg
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" />
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+              </svg>Salin Alamat</button>
+            <a class="btn ghost"
+              href="https://wa.me/6281234567890?text=Sampurasun%2C%20saya%20ingin%20konfirmasi%20pengiriman%20kado%20untuk%20Ajeng%20%26%20Rizky"
+              target="_blank" rel="noopener">
+              Konfirmasi Kado
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== Penutup ====== -->
+  <footer>
+    <div class="tumpal"></div>
+    <div class="container f-in">
+      <div class="f-head rv">
+        <div class="f-mono">A·R</div>
+        <p class="eyebrow" style="color:var(--gold)">Turut Mengundang</p>
+        <h2>Keluarga Besar <em>Kedua</em> Mempelai</h2>
+        <div class="odiv" style="color:var(--gold)"><svg width="100%" height="26">
+            <use href="#s-div" />
+          </svg></div>
+      </div>
+
+      <div class="f-fam">
+        <div class="rv">
+          <h3>Pihak Mempelai Wanita</h3>
+          <ul>
+            <li><b>R. Kusumo Adiningrat</b><i>Ayahanda</i></li>
+            <li><b>Endang Suryowati</b><i>Ibunda</i></li>
+            <li><b>Keluarga Besar R. Djoyodiningrat</b><i>Kakek &amp; Nenek</i></li>
+            <li><b>Drs. Suryo Adiningrat &amp; Kel.</b><i>Paman</i></li>
+            <li><b>Retno Palupi, S.Pd.</b><i>Bibi</i></li>
+          </ul>
+        </div>
+        <div class="rv" style="--d:.12s">
+          <h3>Pihak Mempelai Pria</h3>
+          <ul>
+            <li><b>H. Dedi Ramdani</b><i>Ayahanda</i></li>
+            <li><b>Hj. Nia Kurniasih</b><i>Ibunda</i></li>
+            <li><b>Keluarga Besar H. Usman Ramdani</b><i>Kakek &amp; Nenek</i></li>
+            <li><b>Iis Sutarminah &amp; Kel.</b><i>Bibi</i></li>
+            <li><b>Dendi Ramdhan, S.Kom.</b><i>Saudara</i></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="f-close rv">
+        <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i berkenan hadir
+          untuk memberikan doa restu. Atas kehadiran dan doanya, kami mengucapkan terima kasih yang sebesar-besarnya.
+        </p>
+        <p class="fat">Mari sejenak membaca <b>Al-Fatihah</b> sebagai doa terbaik untuk kedua mempelai.</p>
+      </div>
+      <p class="f-salam rv">Wassalamu’alaikum Warahmatullahi Wabarakatuh.</p>
+      <p class="f-names rv">Ajeng <i>&amp;</i> Rizky</p>
+      <p class="f-grat rv">Nuhun · Matur Nuwun · Jazakumullahu Khairan</p>
+
+      <div class="f-bottom">
+        <span>Ajeng &amp; Rizky — 12 · 09 · 2026</span>
+        <span>Sampurasun, nuhun pisan</span>
+        <a class="backtop" href="#hero">
+          Kembali ke atas
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====== FAB Musik & Toast ====== -->
+  <button class="fab" id="fab" aria-label="Putar / jeda musik gamelan" title="Putar / jeda gamelan">
+    <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M8 5.5v13l11-6.5z" />
+    </svg>
+    <span class="eq"><i></i><i></i><i></i></span>
+  </button>
+  <div class="toasts" id="toasts"></div>
+
+  <script>
+    /* ================= Utilitas ================= */
+    const $ = s => document.querySelector(s);
+    const $$ = s => [...document.querySelectorAll(s)];
+    const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+    function toast(msg) {
+      const t = document.createElement('div');
+      t.className = 'toast';
+      t.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+      const sp = document.createElement('span');
+      sp.textContent = msg;
+      t.appendChild(sp);
+      $('#toasts').appendChild(t);
+      setTimeout(() => { t.classList.add('out'); setTimeout(() => t.remove(), 320); }, 2600);
+    }
+
+    /* ================= Gerbang pembuka ================= */
+    const cover = $('#cover'), fab = $('#fab');
+    $('#openBtn').addEventListener('click', () => {
+      if (cover.classList.contains('open')) return;
+      cover.classList.add('open');
+      document.body.classList.add('open');
+      MUS.toggle(fab, true);                       // gamelan mulai bersamaan gerbang terbuka
+      setTimeout(() => { cover.remove(); document.body.classList.remove('lock'); }, 1600);
+    });
+
+    /* ================= Musik gamelan (Web Audio, skala slendro) ================= */
+    const MUS = (() => {
+      let ctx, master, wet, dly, dlyG, timer, sg = 0, next = 0, on = false;
+      const BEAT = 1.04, LEN = 16;
+      const S = [220, 252.3, 289.4, 332.1, 381.1];            // slendro ±240 sen / step
+      const bal = [0, 2, 1, 3, 2, 4, 3, 2, 1, 3, 2, 1, 0, 2, 4, 1];          // balungan
+      const ken = { 0: 4, 4: 3, 8: 4, 12: 2 };                      // kenong
+      const sul = { 0: [2, 5], 6: [3, 3], 10: [4, 4], 18: [2, 4], 24: [1, 3], 28: [0, 4] }; // frasa suling per 32 ketuk
+
+      function build() {
+        ctx = new (window.AudioContext || window.webkitAudioContext)();
+        master = ctx.createGain(); master.gain.value = .8;
+        const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 3200;
+        master.connect(lp); lp.connect(ctx.destination);
+        // Reverb: impuls noise yang meluruh (gema pendopo)
+        const conv = ctx.createConvolver();
+        const n = ctx.sampleRate * 2.6, b = ctx.createBuffer(2, n, ctx.sampleRate);
+        for (let c = 0; c < 2; c++) { const d = b.getChannelData(c); for (let i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / n, 2.8); }
+        conv.buffer = b; wet = ctx.createGain(); wet.gain.value = .3;
+        lp.connect(conv); conv.connect(wet); wet.connect(ctx.destination);
+        // Gema kecapi lembut
+        dly = ctx.createDelay(1.2); dly.delayTime.value = BEAT;
+        dlyG = ctx.createGain(); dlyG.gain.value = .24;
+        const df = ctx.createBiquadFilter(); df.type = 'lowpass'; df.frequency.value = 1800;
+        dly.connect(df); df.connect(dlyG); dlyG.connect(dly); dlyG.connect(master);
+      }
+      function osc(type, f, t, g0, att, dec) {
+        const o = ctx.createOscillator(), g = ctx.createGain();
+        o.type = type; o.frequency.value = f;
+        g.gain.setValueAtTime(.0001, t);
+        g.gain.linearRampToValueAtTime(g0, t + att);
+        g.gain.exponentialRampToValueAtTime(.0001, t + att + dec);
+        o.connect(g); g.connect(master);
+        o.start(t); o.stop(t + att + dec + .05);
+        return o;
+      }
+      function saron(i, t) {
+        const f = S[i];
+        osc('sine', f, t, .06, .008, .72);
+        osc('sine', f * 2.92, t, .02, .005, .18);   // parsial logam
+      }
+      function kenong(i, t) {
+        const o = osc('sine', S[i], t, .1, .02, 1.9);
+        o.frequency.exponentialRampToValueAtTime(S[i] * .985, t + 1.6);
+      }
+      function gong(t) {
+        [[1, .13, 6], [2.76, .05, 4.2], [5.4, .03, 2.6]].forEach(p => {
+          const o = osc('sine', 66 * p[0], t, p[1], .03, p[2]);
+          o.frequency.exponentialRampToValueAtTime(66 * p[0] * .97, t + p[2] * .7);
+        });
+      }
+      function kendang(t) {
+        const o = ctx.createOscillator(), g = ctx.createGain();
+        o.type = 'sine';
+        o.frequency.setValueAtTime(150, t);
+        o.frequency.exponentialRampToValueAtTime(70, t + .12);
+        g.gain.setValueAtTime(.0001, t);
+        g.gain.linearRampToValueAtTime(.085, t + .01);
+        g.gain.exponentialRampToValueAtTime(.0001, t + .2);
+        o.connect(g); g.connect(master); o.start(t); o.stop(t + .25);
+      }
+      function suling(i, t, dur) {
+        const f = S[i] * 2;
+        const o = ctx.createOscillator(), g = ctx.createGain();
+        const v = ctx.createOscillator(), vg = ctx.createGain();   // vibrato bernafas
+        o.type = 'sine'; o.frequency.value = f;
+        v.frequency.value = 4.6; vg.gain.value = 3.2;
+        v.connect(vg); vg.connect(o.frequency);
+        g.gain.setValueAtTime(.0001, t);
+        g.gain.linearRampToValueAtTime(.055, t + .3);
+        g.gain.setValueAtTime(.055, t + dur * .6);
+        g.gain.exponentialRampToValueAtTime(.0001, t + dur);
+        o.connect(g); g.connect(master); g.connect(dly);
+        o.start(t); v.start(t); o.stop(t + dur + .1); v.stop(t + dur + .1);
+      }
+      function sched() {
+        while (next < ctx.currentTime + .15) {
+          const s = sg % LEN, t = next;
+          saron(bal[s], t);
+          if (s in ken) kenong(ken[s], t);
+          if (s === 0) gong(t);
+          if (s === 6 || s === 14) kendang(t);
+          const s32 = sg % 32;
+          if (s32 in sul) suling(sul[s32][0], t, sul[s32][1] * BEAT);
+          next += BEAT; sg++;
+        }
+      }
+      return {
+        toggle(f, force) {
+          if (!ctx) build();
+          if (on && !force) {
+            clearInterval(timer); on = false;
+            master.gain.setTargetAtTime(.0001, ctx.currentTime, .12);
+            f.classList.remove('playing');
+            toast('Gamelan dijeda');
+            setTimeout(() => { if (!on && ctx.state === 'running') ctx.suspend(); }, 700);
+          } else {
+            ctx.resume();
+            if (!on) { timer = setInterval(sched, 50); on = true; }
+            master.gain.setTargetAtTime(.8, ctx.currentTime, .3);
+            next = ctx.currentTime + .08;
+            f.classList.add('playing');
+            if (!force) toast('Gamelan diputar');
+          }
+        }
+      };
+    })();
+    fab.addEventListener('click', () => MUS.toggle(fab));
+
+    /* ================= Topbar ================= */
+    addEventListener('scroll', () => {
+      $('#topbar').classList.toggle('scrolled', scrollY > 10);
+    }, { passive: true });
+
+    /* ================= Reveal saat scroll ================= */
+    const io = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .12 });
+    $$('.rv').forEach(el => io.observe(el));
+
+    /* ================= Countdown (12 Sep 2026, 08.00 WIB) ================= */
+    const target = new Date('2026-09-12T08:00:00+07:00').getTime();
+    const pad = n => String(n).padStart(2, '0');
+    function tick() {
+      let d = target - Date.now();
+      if (d <= 0) { d = 0; $('#cdNote').textContent = 'Alhamdulillah, hari bahagia telah tiba — terima kasih atas doa restunya.'; }
+      $('#cd-d').textContent = pad(Math.floor(d / 864e5));
+      $('#cd-h').textContent = pad(Math.floor(d / 36e5) % 24);
+      $('#cd-m').textContent = pad(Math.floor(d / 6e4) % 60);
+      $('#cd-s').textContent = pad(Math.floor(d / 1e3) % 60);
+    }
+    setInterval(tick, 1000); tick();
+
+    /* ================= Galeri: carousel fade otomatis ================= */
+    const carSeeds = ['jawapw1', 'jawapw2', 'jawapw3', 'jawapw4', 'jawapw5', 'jawapw6'];
+    const carCaps = ['Pemberkasan & Lamaran', 'Busana Adat Jawa', 'Sesi Prewedding — Batik', 'Degung Sore Hari', 'Sepasang Mempelai', 'Doa untuk Kita'];
+    const track = $('#carTrack'), dotsBox = $('#carDots'), capEl = $('#carCap'), carEl = $('#car');
+    track.innerHTML = carSeeds.map((s, i) =>
+      `<div class="car-slide${i === 0 ? ' on' : ''}"><img loading="lazy" src="https://picsum.photos/seed/${s}/1200/720.jpg" alt="${carCaps[i]}"></div>`).join('');
+    dotsBox.innerHTML = carSeeds.map((_, i) => `<button class="dot${i === 0 ? ' on' : ''}" aria-label="Foto ${i + 1}"></button>`).join('');
+    const slides = $$('#carTrack .car-slide'), dots = $$('#carDots .dot');
+    let ci = 0, autoT = null;
+    function go(i) {
+      slides[ci].classList.remove('on'); dots[ci].classList.remove('on');
+      ci = (i + slides.length) % slides.length;
+      slides[ci].classList.add('on'); dots[ci].classList.add('on');
+      capEl.textContent = carCaps[ci];
+    }
+    function auto() { stop(); autoT = setInterval(() => go(ci + 1), 4600); }
+    function stop() { if (autoT) clearInterval(autoT); autoT = null; }
+    $('#carPrev').addEventListener('click', () => { go(ci - 1); auto(); });
+    $('#carNext').addEventListener('click', () => { go(ci + 1); auto(); });
+    dots.forEach((d, i) => d.addEventListener('click', () => { go(i); auto(); }));
+    carEl.addEventListener('mouseenter', stop);
+    carEl.addEventListener('mouseleave', auto);
+    let px = null;
+    carEl.addEventListener('pointerdown', e => { px = e.clientX; });
+    carEl.addEventListener('pointerup', e => {
+      if (px === null) return;
+      const dx = e.clientX - px; px = null;
+      if (Math.abs(dx) > 40) { go(ci + (dx < 0 ? 1 : -1)); auto(); }
+    });
+    document.addEventListener('visibilitychange', () => document.hidden ? stop() : auto());
+    auto();
+
+    /* ================= Tab? Tidak — salin & kalender ================= */
+    function copyText(t) {
+      const fb = () => {
+        const ta = document.createElement('textarea');
+        ta.value = t; ta.style.cssText = 'position:fixed;opacity:0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); toast('Disalin: ' + t); }
+        catch (e) { toast('Gagal menyalin'); }
+        ta.remove();
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(t).then(() => toast('Disalin: ' + t)).catch(fb);
+      } else fb();
+    }
+    $$('[data-copy]').forEach(b => b.addEventListener('click', () => copyText(b.dataset.copy)));
+
+    $('#icsBtn').addEventListener('click', () => {
+      const ics = [
+        'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//AjengRizky//Undangan//ID', 'BEGIN:VEVENT',
+        'UID:ajeng-rizky-120926@wedding', 'DTSTAMP:20260101T000000Z',
+        'DTSTART:20260912T010000Z', 'DTEND:20260912T070000Z',
+        'SUMMARY:Pernikahan Ajeng & Rizky', 'LOCATION:Pendopo Agung\\, Taman Budaya Yogyakarta\\, Jl. Sriwedani No. 1',
+        'DESCRIPTION:Akad 08.00 WIB - Resepsi 11.00 WIB. Dress code: batik/kebaya earth tone.',
+        'END:VEVENT', 'END:VCALENDAR'
+      ].join('\r\n');
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
+      a.download = 'Pernikahan-Ajeng-Rizky.ics';
+      a.click(); URL.revokeObjectURL(a.href);
+      toast('Berkas kalender berhasil diunduh');
+    });
+
+    /* ================= QRIS ================= */
+    addEventListener('load', () => {
+      const el = $('#qr');
+      if (!el) return;
+      if (typeof QRCode !== 'undefined') {
+        new QRCode(el, {
+          text: 'QRIS|AJENG&RIZKY|WEDDING|0812-3456-7890|NMID:ID1020260912000',
+          width: 212, height: 212, colorDark: '#5A232A', colorLight: '#FFFFFF'
+        });
+      } else {
+        el.innerHTML = '<p style="text-align:center;font-family:Lora,serif;font-size:13px;color:#5A232A;padding:24px;border:1px dashed #C2A055">QRIS<br>0812-3456-7890<br>a.n. Ajeng Saraswati</p>';
+      }
+    });
+
+    /* ================= RSVP & Gulungan Doa ================= */
+    const seedDoa = [
+      { name: 'Neng Fitri Handayani', attend: 'hadir', count: 2, msg: 'Sampurasun Ajeng & Rizky — wilujeng! Mugi langgeng saking Baé, bari saeutik deui kana rejeki.', ts: Date.now() - 54e5 },
+      { name: 'Mas Dandang & Kel.', attend: 'hadir', count: 4, msg: 'Barakallahu laka wa baraka alaika. Selamat menempuh hidup baru, semoga sakinah mawaddah warahmah.', ts: Date.now() - 936e5 },
+      { name: 'Bu Wulan Sari', attend: 'hadir', count: 1, msg: 'Akhirnya panggihnya! Tidak sabar melihat prosesi sungkeman, pasti haru sekali.', ts: Date.now() - 1728e5 },
+      { name: 'Om Herman', attend: 'absent', count: 0, msg: 'Mohon maaf belum bisa hadir karena tugas ke luar negeri. Doa terbaik dari kami sekeluarga, mohon maaf lahir batin.', ts: Date.now() - 2592e5 }
+    ];
+    let doas = [];
+    try { doas = JSON.parse(localStorage.getItem('ar_doas_v1')) || []; } catch (e) { }
+    if (!Array.isArray(doas) || !doas.length) doas = seedDoa.slice();
+
+    const initials = n => {
+      const p = n.trim().split(/\s+/);
+      return ((p[0]?.[0] || '') + (p[1]?.[0] || '')).toUpperCase() || 'A';
+    };
+    const avaColor = n => ['#6E2B33', '#4E5A3A', '#96754A', '#3E3324'][(n.charCodeAt(0) || 0) % 4];
+    function timeAgo(ts) {
+      const s = (Date.now() - ts) / 1000;
+      if (s < 60) return 'Baru saja';
+      if (s < 3600) return Math.floor(s / 60) + ' mnt lalu';
+      if (s < 86400) return Math.floor(s / 3600) + ' jam lalu';
+      return new Date(ts).toLocaleDateString('id-ID', { day: 'numeric', month: 'short' });
+    }
+    function renderDoas() {
+      $('#gList').innerHTML = doas.map(d => `
+    <div class="g-item">
+      <div class="g-ava" style="background:${avaColor(d.name)}">${esc(initials(d.name))}</div>
+      <div class="g-meta">
+        <div class="g-top">
+          <span class="g-name">${esc(d.name)}</span>
+          <span class="g-badge ${d.attend === 'hadir' ? 'hadir' : ''}">${d.attend === 'hadir' ? 'Hadir' : 'Berhalangan'}</span>
+          <span class="g-time">${timeAgo(d.ts)}</span>
+        </div>
+        ${d.msg ? `<p class="g-msg">“${esc(d.msg)}”</p>` : ''}
+      </div>
+    </div>`).join('');
+      $('#gCount').textContent = doas.length + ' doa';
+    }
+    renderDoas();
+
+    let attend = 'hadir', qty = 1;
+    $$('#segAttend button').forEach(b => b.addEventListener('click', () => {
+      $$('#segAttend button').forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      attend = b.dataset.val;
+      $('#stepWrap').classList.toggle('off', attend !== 'hadir');
+    }));
+    $('#qtyMinus').addEventListener('click', () => { qty = Math.max(1, qty - 1); $('#qtyVal').textContent = qty; });
+    $('#qtyPlus').addEventListener('click', () => { qty = Math.min(6, qty + 1); $('#qtyVal').textContent = qty; });
+
+    $('#rsvpForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const name = $('#fName').value.trim();
+      if (!name) { $('#errName').classList.add('show'); $('#fName').focus(); return; }
+      $('#errName').classList.remove('show');
+      doas.unshift({ name, attend, count: attend === 'hadir' ? qty : 0, msg: $('#fMsg').value.trim(), ts: Date.now() });
+      try { localStorage.setItem('ar_doas_v1', JSON.stringify(doas)); } catch (e) { }
+      renderDoas();
+      $('#fName').value = ''; $('#fMsg').value = '';
+      toast(`Terima kasih, ${name.split(' ')[0]} — doa Anda masuk gulungan`);
+    });
+  </script>
+</body>
+
+</html>
