@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Pernikahan — Rani & Bayu</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --hutan:#14281d; --hutan2:#1e3a2a; --hijau:#3a5a40;
+    --krem:#f7f3e8; --emas:#c9a24b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Cormorant Garamond',serif;background:var(--hutan);color:var(--krem);overflow-x:hidden;padding-bottom:90px}
+  .script{font-family:'Great Vibes',cursive}
+  .small{letter-spacing:.35em;text-transform:uppercase;font-size:.75rem}
+
+  /* ===== COVER ===== */
+  #cover{position:fixed;inset:0;z-index:100;background:linear-gradient(180deg,#0f1f16,#1e3a2a);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    padding:2rem;transition:opacity 1s,visibility 1s}
+  #cover.buka{opacity:0;visibility:hidden}
+  #cover .pinus{width:120px;opacity:.9;margin-bottom:1rem;animation:melayang 5s ease-in-out infinite}
+  #cover h2{font-weight:400;color:var(--emas);margin:.5rem 0}
+  #cover .nama{font-size:3.2rem;animation:fadeUp 1.2s ease both}
+  #btnBuka{margin-top:2rem;padding:.9rem 2.6rem;border:1px solid var(--emas);background:transparent;
+    color:var(--emas);cursor:pointer;font-family:inherit;letter-spacing:.25em;text-transform:uppercase;
+    font-size:.8rem;transition:.3s;animation:denyut 2.5s ease-in-out infinite}
+  #btnBuka:hover{background:var(--emas);color:var(--hutan);animation:none}
+
+  /* ===== KONTEN ===== */
+  #konten{opacity:0;transition:opacity 1.2s}
+  #konten.tampil{opacity:1}
+  section{padding:4.5rem 1.5rem;text-align:center;position:relative;overflow:hidden}
+  section:nth-child(even){background:var(--hutan2)}
+  h2.judul{font-size:1.9rem;color:var(--emas);margin:.4rem 0 1.6rem}
+  .garland{color:var(--emas);font-size:1.1rem;opacity:.8}
+
+  /* hero */
+  #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+    background:linear-gradient(180deg,#1e3a2a 0%,#14281d 100%)}
+  #hero .pohon{position:absolute;bottom:0;left:0;width:100%;pointer-events:none;opacity:.5}
+  #hero h1{font-size:4rem;color:var(--emas);position:relative}
+  #hero .tgl{margin-top:1rem;letter-spacing:.3em}
+  .panah{margin-top:2.5rem;font-size:1.6rem;animation:tokok 1.6s ease-in-out infinite;opacity:.8}
+
+  /* kartu umum */
+  .kartu{max-width:420px;margin:1.5rem auto;padding:2rem;border:1px solid rgba(201,162,75,.4);
+    background:rgba(255,255,255,.03);transition:.4s}
+  .kartu:hover{background:rgba(201,162,75,.08);transform:translateY(-4px)}
+  .kartu .avatar{width:90px;height:90px;border-radius:50%;border:2px solid var(--emas);
+    display:flex;align-items:center;justify-content:center;font-size:2.4rem;margin:0 auto 1rem;background:var(--hijau)}
+  .kartu h3{font-size:1.8rem;color:var(--emas)}
+  .dan{font-size:2.6rem;color:var(--emas)}
+
+  /* acara & amplop */
+  .acara-grid{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center}
+  .acara{flex:1;min-width:240px;max-width:340px;padding:2rem;border:1px solid rgba(201,162,75,.4);transition:.4s}
+  .acara:hover{transform:translateY(-5px);border-color:var(--emas);background:rgba(201,162,75,.06)}
+  .acara .ikon{font-size:2rem;animation:melayang 4s ease-in-out infinite}
+  .acara h3{font-family:'Great Vibes',cursive;font-size:2rem;color:var(--emas);margin:.4rem 0}
+  .acara .jam{font-size:1.6rem;margin:.5rem 0}
+  .no-rek{font-size:1.5rem;letter-spacing:.1em;color:var(--emas);margin:.4rem 0}
+  .btn{display:inline-block;margin-top:1rem;padding:.7rem 1.8rem;border:1px solid var(--emas);
+    color:var(--emas);background:transparent;text-decoration:none;font-family:inherit;font-size:.75rem;
+    letter-spacing:.25em;text-transform:uppercase;transition:.3s;cursor:pointer}
+  .btn:hover{background:var(--emas);color:var(--hutan)}
+
+  /* ===== PETA ===== */
+  .peta{max-width:560px;margin:1.5rem auto;border:1px solid rgba(201,162,75,.5);
+    border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .peta iframe{width:100%;height:260px;border:0;display:block}
+
+  /* ===== GALERI ===== */
+  .grid-foto{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:.8rem;max-width:760px;margin:0 auto}
+  .grid-foto img{width:100%;height:200px;object-fit:cover;border:2px solid rgba(201,162,75,.4);
+    cursor:pointer;transition:.4s;filter:sepia(.15)}
+  .grid-foto img:hover{transform:scale(1.05) rotate(-1deg);filter:none;border-color:var(--emas)}
+  #lightbox{position:fixed;inset:0;background:rgba(5,12,8,.95);z-index:110;display:none;
+    align-items:center;justify-content:center;cursor:zoom-out;padding:1.5rem}
+  #lightbox.aktif{display:flex}
+  #lightbox img{max-width:92%;max-height:90%;border:2px solid var(--emas);animation:zoomIn .3s ease}
+
+  /* countdown */
+  #hitung{display:flex;gap:.8rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap}
+  #hitung div{min-width:72px;padding:1rem .5rem;border:1px solid rgba(201,162,75,.4);transition:.4s}
+  #hitung div:hover{border-color:var(--emas);transform:translateY(-3px)}
+  #hitung b{display:block;font-size:1.8rem;color:var(--emas)}
+  #hitung span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase}
+
+  /* ===== BUKU UCAPAN ===== */
+  #formUcapan{max-width:420px;margin:1.5rem auto;display:flex;flex-direction:column;gap:.8rem}
+  #formUcapan input,#formUcapan textarea,#formUcapan select{
+    padding:.8rem;background:rgba(255,255,255,.06);border:1px solid rgba(201,162,75,.4);
+    color:var(--krem);font-family:inherit;font-size:1rem}
+  #formUcapan :is(input,textarea,select):focus{outline:1px solid var(--emas)}
+  #formUcapan select option{color:#222}
+  .badge{display:inline-block;padding:.3rem 1rem;border:1px solid var(--emas);border-radius:20px;
+    font-size:.8rem;color:var(--emas);margin-bottom:1rem}
+  .ucapan-item{max-width:460px;text-align:left;margin:1rem auto;padding:1.2rem 1.5rem;
+    border:1px solid rgba(201,162,75,.3);background:rgba(255,255,255,.03);animation:fadeUp .5s ease both}
+  .ucapan-item b{color:var(--emas)}
+  .ucapan-item .waktu{font-size:.75rem;opacity:.6;margin-left:.5rem}
+  .ucapan-item p{margin-top:.4rem;font-style:italic;line-height:1.6}
+
+  /* ===== NAV BAWAH ===== */
+  #navBawah{position:fixed;bottom:1rem;left:50%;transform:translate(-50%,150%);z-index:95;
+    display:flex;gap:.15rem;padding:.4rem;border:1px solid rgba(201,162,75,.5);
+    border-radius:50px;background:rgba(15,31,22,.92);backdrop-filter:blur(8px);
+    box-shadow:0 8px 24px rgba(0,0,0,.4);transition:transform .8s ease}
+  #navBawah.tampil{transform:translate(-50%,0)}
+  .nav-item{display:flex;flex-direction:column;align-items:center;gap:2px;padding:.5rem .7rem;
+    border:none;background:transparent;color:var(--krem);font-family:inherit;cursor:pointer;
+    font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;border-radius:30px;transition:.3s;opacity:.75}
+  .nav-item span.ikon{font-size:1.15rem;transition:.3s}
+  .nav-item:hover{opacity:1;color:var(--emas)}
+  .nav-item.aktif{background:rgba(201,162,75,.15);color:var(--emas);opacity:1}
+  .nav-item.aktif .ikon{transform:translateY(-3px) scale(1.15)}
+
+  /* ===== MUSIK ===== */
+  #btnMusik{position:fixed;bottom:5.5rem;right:1.2rem;z-index:90;width:48px;height:48px;
+    border-radius:50%;border:1px solid var(--emas);background:rgba(20,40,29,.85);color:var(--emas);
+    font-size:1.2rem;cursor:pointer;opacity:0;transition:.8s}
+  #btnMusik.tampil{opacity:1}
+  #btnMusik.putar{animation:putar 3s linear infinite}
+
+  /* ===== ANIMASI ===== */
+  .reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.muncul{opacity:1;transform:translateY(0)}
+  .kiri{transform:translateX(-45px)} .kiri.muncul{transform:translateX(0)}
+  .kanan{transform:translateX(45px)} .kanan.muncul{transform:translateX(0)}
+  .zoom{transform:scale(.85)} .zoom.muncul{transform:scale(1)}
+  .deko{position:absolute;font-size:1.6rem;opacity:.3;pointer-events:none;animation:melayang 6s ease-in-out infinite}
+
+  footer{padding:2.5rem 1.5rem 3.5rem;text-align:center;font-size:.9rem;opacity:.75;background:#0f1f16}
+
+  .daun{position:fixed;top:-40px;z-index:50;pointer-events:none;animation:jatuh linear infinite}
+  @keyframes jatuh{0%{transform:translateY(-40px) rotate(0)}100%{transform:translateY(110vh) rotate(360deg)}}
+  @keyframes melayang{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-16px) rotate(8deg)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+  @keyframes putar{to{transform:rotate(360deg)}}
+  @keyframes tokok{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(10px);opacity:1}}
+  @keyframes denyut{0%,100%{box-shadow:0 0 0 0 rgba(201,162,75,.5)}50%{box-shadow:0 0 0 12px rgba(201,162,75,0)}}
+  @keyframes zoomIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+</style>
+</head>
+<body>
+
+<!-- 🎵 MUSIK: taruh file musik.mp3 di folder yang sama -->
+<audio id="musik" loop src="musik.mp3"></audio>
+<button id="btnMusik" title="Musik">🎵</button>
+
+<!-- ===== COVER ===== -->
+<div id="cover">
+  <svg class="pinus" viewBox="0 0 64 64" fill="#c9a24b">
+    <path d="M32 4 L44 22 H36 L48 40 H38 L52 58 H12 L26 40 H16 L28 22 H20 Z"/>
+    <rect x="29" y="58" width="6" height="6"/>
+  </svg>
+  <p class="small">The Wedding Of</p>
+  <h2 class="nama script">Rani &amp; Bayu</h2>
+  <p>24 . 05 . 2025</p>
+  <p style="margin-top:1.5rem">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+  <p id="tamu" style="color:var(--emas);font-size:1.2rem">Tamu Undangan</p>
+  <button id="btnBuka">Buka Undangan</button>
+</div>
+
+<div id="lightbox" onclick="this.classList.remove('aktif')"><img id="lbImg" alt=""></div>
+
+<!-- 🧭 NAV BAWAH -->
+<nav id="navBawah">
+  <button class="nav-item" data-target="#hero"><span class="ikon">🏡</span>Beranda</button>
+  <button class="nav-item" data-target="#mempelai"><span class="ikon">💍</span>Mempelai</button>
+  <button class="nav-item" data-target="#acara"><span class="ikon">📅</span>Acara</button>
+  <button class="nav-item" data-target="#galeri"><span class="ikon">🖼️</span>Galeri</button>
+  <button class="nav-item" data-target="#amplop"><span class="ikon">🎁</span>Amplop</button>
+  <button class="nav-item" data-target="#ucapan"><span class="ikon">💌</span>Ucapan</button>
+</nav>
+
+<!-- ===== KONTEN ===== -->
+<div id="konten">
+
+  <section id="hero">
+    <span class="deko" style="top:12%;left:8%">🌿</span>
+    <span class="deko" style="top:22%;right:10%;animation-delay:1.5s">🍃</span>
+    <span class="deko" style="bottom:30%;left:15%;animation-delay:3s">✨</span>
+    <span class="deko" style="bottom:35%;right:8%;animation-delay:2s">🌲</span>
+    <p class="small reveal">We Are Getting Married</p>
+    <h1 class="script reveal" style="transition-delay:.2s">Rani &amp; Bayu</h1>
+    <p class="tgl reveal" style="transition-delay:.4s">SABTU · 24 MEI 2025</p>
+    <div class="panah">▼</div>
+    <svg class="pohon" viewBox="0 0 1440 200" preserveAspectRatio="none" fill="#0f1f16">
+      <path d="M0 200 L0 120 L60 120 L80 60 L100 120 L140 120 L160 30 L180 120 L230 120 L250 80 L270 120 L330 120 L350 40 L370 120 L430 120 L450 70 L470 120 L540 120 L560 25 L580 120 L640 120 L660 90 L680 120 L750 120 L770 50 L790 120 L850 120 L870 35 L890 120 L950 120 L970 75 L990 120 L1050 120 L1070 45 L1090 120 L1150 120 L1170 85 L1190 120 L1250 120 L1270 30 L1290 120 L1350 120 L1370 65 L1390 120 L1440 120 L1440 200 Z"/>
+    </svg>
+  </section>
+
+  <section>
+    <p class="garland reveal">🌿 ❦ 🌿</p>
+    <p class="reveal" style="max-width:520px;margin:1rem auto;font-style:italic;line-height:1.8;transition-delay:.2s">
+      "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu
+      pasangan hidup dari jenismu sendiri supaya kamu merasa tenteram bersamanya
+      dan Dia menjadikan di antaramu rasa kasih dan sayang."
+      <br><span class="small" style="display:block;margin-top:.8rem">QS. Ar-Rum : 21</span>
+    </p>
+  </section>
+
+  <section id="mempelai">
+    <span class="deko" style="top:15%;right:6%">🍃</span>
+    <span class="deko" style="bottom:12%;left:5%;animation-delay:2s">🌿</span>
+    <h2 class="judul script reveal">Mempelai</h2>
+    <div class="kartu reveal kiri">
+      <div class="avatar">👩</div>
+      <p class="small">Mempelai Wanita</p>
+      <h3 class="script">Rani Amelia, S.Kom</h3>
+      <p>Putri dari Bpk. H. Ahmad &amp; Ibu Hj. Siti</p>
+    </div>
+    <p class="dan script reveal zoom">&amp;</p>
+    <div class="kartu reveal kanan">
+      <div class="avatar">👨</div>
+      <p class="small">Mempelai Pria</p>
+      <h3 class="script">Bayu Pratama, S.T</h3>
+      <p>Putra dari Bpk. Budi &amp; Ibu Dewi</p>
+    </div>
+  </section>
+
+  <!-- 🖼️ GALERI: taruh foto1.jpg s/d foto6.jpg di folder yang sama -->
+  <section id="galeri">
+    <h2 class="judul script reveal">Galeri Kami</h2>
+    <div class="grid-foto">
+      <img class="reveal zoom" src="foto1.jpg" alt="Foto 1" onclick="buka(this.src)">
+      <img class="reveal zoom" style="transition-delay:.1s" src="foto2.jpg" alt="Foto 2" onclick="buka(this.src)">
+      <img class="reveal zoom" style="transition-delay:.2s" src="foto3.jpg" alt="Foto 3" onclick="buka(this.src)">
+      <img class="reveal zoom" style="transition-delay:.3s" src="foto4.jpg" alt="Foto 4" onclick="buka(this.src)">
+      <img class="reveal zoom" style="transition-delay:.4s" src="foto5.jpg" alt="Foto 5" onclick="buka(this.src)">
+      <img class="reveal zoom" style="transition-delay:.5s" src="foto6.jpg" alt="Foto 6" onclick="buka(this.src)">
+    </div>
+    <p class="reveal" style="margin-top:1rem;font-size:.85rem;opacity:.7">Ketuk foto untuk memperbesar 🌿</p>
+  </section>
+
+  <!-- 📅 ACARA + PETA -->
+  <section id="acara">
+    <h2 class="judul script reveal">Waktu &amp; Tempat</h2>
+    <div class="acara-grid">
+      <div class="acara reveal kiri">
+        <div class="ikon">💍</div>
+        <h3>Akad Nikah</h3>
+        <p class="small">Sabtu</p>
+        <p class="jam">08.00 WIB</p>
+        <p>Kediaman Mempelai Wanita<br>Jl. Pinus No. 12, Bogor</p>
+      </div>
+      <div class="acara reveal kanan">
+        <div class="ikon">🎉</div>
+        <h3>Resepsi</h3>
+        <p class="small">Sabtu</p>
+        <p class="jam">11.00 – 14.00 WIB</p>
+        <p>Taman Hutan Raya<br>Jl. Raya Puncak No. 88, Bogor</p>
+      </div>
+    </div>
+
+    <!-- 🗺️ Ganti q= dengan alamat lokasimu (spasi ditulis +) -->
+    <div class="peta reveal">
+      <iframe src="https://maps.google.com/maps?q=Taman+Hutan+Raya+Ir+H+Djuanda+Bogor&z=15&output=embed"
+        loading="lazy" title="Peta Lokasi"></iframe>
+    </div>
+    <a class="btn reveal" href="https://maps.google.com/?q=Taman+Hutan+Raya+Ir+H+Djuanda+Bogor" target="_blank">📍 Buka di Google Maps</a>
+  </section>
+
+  <section>
+    <p class="small reveal">Menuju Hari Bahagia</p>
+    <h2 class="judul script reveal" style="transition-delay:.15s">Countdown</h2>
+    <div id="hitung">
+      <div class="reveal zoom"><b id="h">0</b><span>Hari</span></div>
+      <div class="reveal zoom" style="transition-delay:.1s"><b id="j">0</b><span>Jam</span></div>
+      <div class="reveal zoom" style="transition-delay:.2s"><b id="m">0</b><span>Menit</span></div>
+      <div class="reveal zoom" style="transition-delay:.3s"><b id="d">0</b><span>Detik</span></div>
+    </div>
+  </section>
+
+  <!-- 💰 AMPLOP -->
+  <section id="amplop">
+    <h2 class="judul script reveal">Amplop Digital</h2>
+    <p class="reveal" style="max-width:460px;margin:0 auto 1rem;opacity:.85">
+      Doa restu Anda adalah hadiah terindah. Namun jika memberi adalah
+      ungkapan tanda kasih, kami terima dengan penuh syukur 🌿
+    </p>
+    <div class="acara-grid">
+      <div class="acara reveal kiri">
+        <div class="ikon">🏦</div>
+        <h3>Bank BCA</h3>
+        <p class="no-rek">1234567890</p>
+        <p>a.n. Rani Amelia</p>
+        <button class="btn salin" data-rek="1234567890">Salin No. Rekening</button>
+      </div>
+      <div class="acara reveal">
+        <div class="ikon">📱</div>
+        <h3>DANA / GoPay</h3>
+        <p class="no-rek">0812-3456-7890</p>
+        <p>a.n. Bayu Pratama</p>
+        <button class="btn salin" data-rek="081234567890">Salin No. E-Wallet</button>
+      </div>
+      <div class="acara reveal kanan">
+        <div class="ikon">🎁</div>
+        <h3>Kado Fisik</h3>
+        <p style="margin-top:.5rem">Kirim hadiah ke:<br><b>Jl. Pinus No. 12, Bogor</b><br>a.n. Rani Amelia</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💌 UCAPAN -->
+  <section id="ucapan">
+    <h2 class="judul script reveal">Ucapan &amp; Doa</h2>
+    <span class="badge reveal">💌 <span id="jmlUcapan">0</span> ucapan</span>
+    <form id="formUcapan" class="reveal">
+      <input type="text" id="namaU" placeholder="Nama Anda" required>
+      <select id="hadir" required>
+        <option value="">Konfirmasi Kehadiran…</option>
+        <option>Hadir, InsyaAllah 🌿</option>
+        <option>Maaf, Berhalangan 🍂</option>
+      </select>
+      <textarea id="pesanU" rows="3" placeholder="Tulis ucapan & doa…" required></textarea>
+      <button class="btn" type="submit">Kirim Ucapan</button>
+    </form>
+    <div id="daftarUcapan"></div>
+  </section>
+
+  <footer>
+    Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
+    Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
+    <br><br><span class="script" style="font-size:1.6rem;color:var(--emas)">Rani &amp; Bayu</span>
+  </footer>
+</div>
+
+<script>
+  // ===== BUKA UNDANGAN + MUSIK + NAV =====
+  const musik = document.getElementById('musik');
+  const btnMusik = document.getElementById('btnMusik');
+  const navBawah = document.getElementById('navBawah');
+  document.getElementById('btnBuka').onclick = () => {
+    document.getElementById('cover').classList.add('buka');
+    document.getElementById('konten').classList.add('tampil');
+    navBawah.classList.add('tampil');
+    btnMusik.classList.add('tampil');
+    musik.play().catch(()=>{});
+  };
+  btnMusik.onclick = () => musik.paused ? musik.play() : musik.pause();
+  musik.onplay  = () => btnMusik.classList.add('putar');
+  musik.onpause = () => btnMusik.classList.remove('putar');
+
+  // ===== NAMA TAMU DARI URL (?to=Nama) =====
+  const tamu = new URLSearchParams(location.search).get('to');
+  if (tamu) document.getElementById('tamu').textContent = tamu;
+
+  // ===== NAV BAWAH =====
+  document.querySelectorAll('.nav-item').forEach(btn => {
+    btn.onclick = () => document.querySelector(btn.dataset.target).scrollIntoView({behavior:'smooth'});
+  });
+  const navBtns = [...document.querySelectorAll('.nav-item')];
+  const ioNav = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        navBtns.forEach(b => b.classList.toggle('aktif', b.dataset.target === '#' + en.target.id));
+      }
+    });
+  }, {rootMargin:'-40% 0px -55% 0px'});
+  document.querySelectorAll('section[id]').forEach(s => ioNav.observe(s));
+
+  // ===== SCROLL REVEAL =====
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add('muncul'); ioReveal.unobserve(en.target); }
+    });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => ioReveal.observe(el));
+
+  // ===== COUNTDOWN =====
+  const target = new Date('2025-05-24T08:00:00').getTime();
+  setInterval(() => {
+    const sisa = Math.max(0, target - Date.now());
+    document.getElementById('h').textContent = Math.floor(sisa / 864e5);
+    document.getElementById('j').textContent = Math.floor(sisa / 36e5) % 24;
+    document.getElementById('m').textContent = Math.floor(sisa / 6e4) % 60;
+    document.getElementById('d').textContent = Math.floor(sisa / 1e3) % 60;
+  }, 1000);
+
+  // ===== DAUN JATUH =====
+  for (let i = 0; i < 14; i++) {
+    const d = document.createElement('div');
+    d.className = 'daun';
+    d.textContent = ['🍃','🍂','🌿'][i % 3];
+    d.style.left = Math.random() * 100 + 'vw';
+    d.style.fontSize = 14 + Math.random() * 14 + 'px';
+    d.style.opacity = .4 + Math.random() * .5;
+    d.style.animationDuration = 8 + Math.random() * 10 + 's';
+    d.style.animationDelay = Math.random() * 10 + 's';
+    document.body.appendChild(d);
+  }
+
+  // ===== LIGHTBOX GALERI =====
+  function buka(src){
+    document.getElementById('lbImg').src = src;
+    document.getElementById('lightbox').classList.add('aktif');
+  }
+
+  // ===== SALIN NOMOR =====
+  document.querySelectorAll('.salin').forEach(b => {
+    b.onclick = () => {
+      const nomor = b.dataset.rek;
+      const selesai = () => {
+        const lama = b.textContent;
+        b.textContent = '✓ Tersalin!';
+        setTimeout(() => b.textContent = lama, 2000);
+      };
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(nomor).then(selesai).catch(() => salinLama(nomor, selesai));
+      } else salinLama(nomor, selesai);
+    };
+  });
+  function salinLama(teks, cb){
+    const t = document.createElement('textarea');
+    t.value = teks; document.body.appendChild(t); t.select();
+    document.execCommand('copy'); t.remove(); cb();
+  }
+
+  // ===== BUKU UCAPAN (localStorage) =====
+  const KEY = 'ucapan_rani_bayu';
+  const getU = () => { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch(e){ return []; } };
+  const daftar = document.getElementById('daftarUcapan');
+
+  function renderU(){
+    const list = getU();
+    document.getElementById('jmlUcapan').textContent = list.length;
+    daftar.innerHTML = list.length
+      ? list.map(u => `
+        <div class="ucapan-item">
+          <b>${u.nama}</b><span class="waktu">· ${u.waktu}</span><br>
+          <span class="small" style="opacity:.7">${u.hadir}</span>
+          <p>"${u.pesan}"</p>
+        </div>`).join('')
+      : '<p style="opacity:.7;margin-top:1rem">Belum ada ucapan. Jadilah yang pertama! 🌿</p>';
+  }
+
+  document.getElementById('formUcapan').onsubmit = e => {
+    e.preventDefault();
+    const list = getU();
+    list.unshift({
+      nama: document.getElementById('namaU').value.trim(),
+      hadir: document.getElementById('hadir').value,
+      pesan: document.getElementById('pesanU').value.trim(),
+      waktu: new Date().toLocaleString('id-ID', {dateStyle:'medium', timeStyle:'short'})
+    });
+    localStorage.setItem(KEY, JSON.stringify(list));
+    e.target.reset();
+    renderU();
+  };
+  renderU();
+</script>
+</body>
+</html>
